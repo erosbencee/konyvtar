@@ -14,7 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
- * A program main f�ggv�ny�t tartalmaz� oszt�ly.
+ * A program main függvényét tartalmazó osztály.
  * 
  * @author bedonorbert
  *
@@ -25,7 +25,7 @@ public class Main extends Application {
 	private static Stage primaryStage;
 	private AnchorPane rootLayout;
 	/**
-	 * A start met�dus elk�sz�ti az indul�skor megjelen�tend� ablakot.
+	 * A start metódus elkészíti az induláskor megjelenítendő ablakot.
 	 * 
 	 */
 	
@@ -33,7 +33,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 
 		Main.primaryStage = primaryStage;
-		Main.primaryStage.setTitle("RFT K�nyvt�r");
+		Main.primaryStage.setTitle("RFT Könyvtár");
 		
 		Main.primaryStage.getIcons().add(new Image("/images/icon.png"));
 		
@@ -41,7 +41,7 @@ public class Main extends Application {
 	}
 	
 	/**
-	 * Elk�sz�ti a bejelentkez�shez sz�ks�ges fel�letet.
+	 * Elkészíti a bejelentkezéshez sz�kséges felületet.
 	 * 
 	 */
 
@@ -83,9 +83,9 @@ public class Main extends Application {
 	}
 
 	/**
-	 * Visszaadja az ablakhoz tartoz� Stage objektumot.
+	 * Visszaadja az ablakhoz tartozó Stage objektumot.
 	 * 
-	 * @return az ablakhoz tartoz� Stage objektum.
+	 * @return az ablakhoz tartozó Stage objektum.
 	 */
 	
 	public static Stage getPrimaryStage() {
@@ -93,9 +93,9 @@ public class Main extends Application {
 	}
 
 	/**
-	 * Be�ll�tja az ablakhoz tartoz� Stage objektumot.
+	 * Beállítja az ablakhoz tartozó Stage objektumot.
 	 * 
-	 * @param primaryStage az ablakhoz be�ll�tani k�v�nt Stage objektum.
+	 * @param primaryStage az ablakhoz beállítani kívánt Stage objektum.
 	 */
 	
 	public void setPrimaryStage(Stage primaryStage) {
@@ -103,7 +103,7 @@ public class Main extends Application {
 	}
 
 	/**
-	 * A program main f�ggv�nye.
+	 * A program main függvénye.
 	 * 
 	 * @param args az estleges parancssori argomentumok.
 	 */
