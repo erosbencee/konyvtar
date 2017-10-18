@@ -29,6 +29,11 @@ public class RegistrationController {
         
   }
 
+	@FXML
+	private void RegBack() {
+		main.initLogin();
+
+	}
   
  public void Date(){
 //Create the DatePicker.

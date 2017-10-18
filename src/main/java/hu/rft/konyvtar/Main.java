@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import hu.rft.controller.HomeController;
 import hu.rft.controller.RegistrationController;
+import hu.rft.controller.UserMainPageController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -72,6 +73,25 @@ public class Main extends Application {
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			RegistrationController controller = loader.getController();
+            controller.setMainApp(this);
+			primaryStage.show();
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void UserMainPage() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("/FXMLs/MainPage.fxml"));
+			rootLayout = (AnchorPane) loader.load();
+			
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			UserMainPageController controller = loader.getController();
             controller.setMainApp(this);
 			primaryStage.show();
 			

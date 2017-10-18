@@ -124,7 +124,12 @@
                   <Font name="Arial Bold" size="26.0" />
                </font>
             </Text>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #013440;" text="Regisztráció &gt;&gt;" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Regisztráció &gt;&gt;" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#RegBack" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Mégse" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="11">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

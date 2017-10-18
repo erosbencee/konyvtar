@@ -56,7 +56,7 @@
                   <Font name="Arial Bold" size="26.0" />
                </font>
             </Text>
-            <Button id="loginBtn" fx:id="loginBtn" mnemonicParsing="false" onMouseClicked="#login" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #013440;" text="Bejelentkezés &gt;&gt;" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <Button id="loginBtn" fx:id="loginBtn" mnemonicParsing="false" onMouseClicked="#Login" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #013440;" text="Bejelentkezés &gt;&gt;" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Button>
