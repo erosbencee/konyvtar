@@ -66,6 +66,7 @@ public class HomeController {
 
   @FXML
  private void Login(){
+	  main.initRootLayout();
 	  main.UserMainPage();
   }
 

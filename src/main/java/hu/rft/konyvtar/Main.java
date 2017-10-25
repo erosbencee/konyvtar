@@ -5,7 +5,8 @@ import java.io.IOException;
 
 import hu.rft.controller.HomeController;
 import hu.rft.controller.RegistrationController;
-import hu.rft.controller.UserMainPageController;
+import hu.rft.controller.RootLayoutController;
+import hu.rft.controller.HomePageController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,6 +25,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 	private static Stage primaryStage;
+	private BorderPane rootLayout2;
 	private AnchorPane rootLayout;
 	/**
 	 * A start metódus elkészíti az induláskor megjelenítendő ablakot.
@@ -58,6 +60,9 @@ public class Main extends Application {
             controller.setMainApp(this);
 			primaryStage.show();
 			
+			
+
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -83,17 +88,71 @@ public class Main extends Application {
 
 	}
 	
+	   public void initRootLayout() {
+	        try {
+	           
+	            FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/FXMLs/RootLayout.fxml"));
+	            rootLayout2 = (BorderPane) loader.load();
+
+	         
+	            
+	            Scene scene = new Scene(rootLayout2);
+	            primaryStage.setScene(scene);
+	            RootLayoutController controller = loader.getController();
+	            controller.setMainApp(this);
+	            primaryStage.show();
+	            
+
+	        
+	          
+	   
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	
 	public void UserMainPage() {
 		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("/FXMLs/MainPage.fxml"));
-			rootLayout = (AnchorPane) loader.load();
 			
-			Scene scene = new Scene(rootLayout);
-			primaryStage.setScene(scene);
-			UserMainPageController controller = loader.getController();
-            controller.setMainApp(this);
-			primaryStage.show();
+		    FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/FXMLs/HomePage.fxml"));
+            AnchorPane Overview = (AnchorPane) loader.load();
+
+  
+            rootLayout2.setCenter(Overview);
+
+            HomePageController controller = loader.getController();
+			controller.setMainApp(this);
+            
+        
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	
+
+	
+	public void UserMainPageInit() {
+		try {
+			
+			  FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/FXMLs/HomePage.fxml"));
+	            AnchorPane Overview = (AnchorPane) loader.load();
+
+	  
+	            rootLayout2.setCenter(Overview);
+
+	            HomeController controller = loader.getController();
+				controller.setMainApp(this);
+				
+				
+			
+            
+			
 			
 			
 		} catch (IOException e) {
