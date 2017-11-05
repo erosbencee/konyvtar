@@ -22,7 +22,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Adataim">
             <items>
-              <MenuItem mnemonicParsing="false" text="Személyes adatok módosítása" />
+              <MenuItem mnemonicParsing="false" onAction="#PersonalData" text="Személyes adatok" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Kölcsönzések">
@@ -38,7 +38,7 @@
           </Menu>
         </menus>
       </MenuBar>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#BackHome" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                <image>
                   <Image url="/images/logo.png" />
                </image>
@@ -76,7 +76,7 @@
                   </Text>
                </children>
             </GridPane>
-            <Hyperlink layoutX="900.0" layoutY="78.0" onMouseClicked="#Back" text="(Kijelentkezés)" />
+            <Hyperlink layoutX="900.0" layoutY="78.0" onMouseClicked="#Back" text="(Kijelentkezés)" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="78.0" />
          </children>
       </AnchorPane>
    </top>

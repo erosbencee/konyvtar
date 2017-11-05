@@ -26,6 +26,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
@@ -39,6 +40,8 @@ public class HomeController {
 	private Button loginBtn;
 	@FXML
 	private Button reigstrationBtn;
+	@FXML 
+	private TextField email;
 	private Main main;
 	
 	@FXML
@@ -66,9 +69,32 @@ public class HomeController {
 
   @FXML
  private void Login(){
-	  main.initRootLayout();
-	  main.UserMainPage();
+	  if(isValidEmailAddress(email.getText().toString()))
+	  {
+		  main.initRootLayout();
+		  main.UserMainPage();
+	  }
+	  else 
+	  {
+		  Alert alert = new Alert(AlertType.ERROR);
+
+			alert.setTitle("Hiba");
+			alert.setHeaderText("Nem megfelelő a bemenő paraméterek!");
+			alert.setContentText("Az email cím formátuma nem megfelelő!");
+			
+			alert.showAndWait();
+	  }
+		 
   }
 
 
+
+  public boolean isValidEmailAddress (String Email) {
+	  
+      String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+      java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+      java.util.regex.Matcher m = p.matcher(Email);
+      return m.matches();
+}
+  
 }

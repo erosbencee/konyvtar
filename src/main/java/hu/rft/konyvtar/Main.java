@@ -7,6 +7,7 @@ import hu.rft.controller.HomeController;
 import hu.rft.controller.RegistrationController;
 import hu.rft.controller.RootLayoutController;
 import hu.rft.controller.HomePageController;
+import hu.rft.controller.PersonalDataController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -133,6 +134,27 @@ public class Main extends Application {
 
 	}
 	
+	
+	public void PersonalData() {
+		try {
+			
+		    FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/FXMLs/PersonalData.fxml"));
+            AnchorPane Overview = (AnchorPane) loader.load();
+
+  
+            rootLayout2.setCenter(Overview);
+
+            PersonalDataController controller = loader.getController();
+			controller.setMainApp(this);
+            
+        
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 	
 
 	
