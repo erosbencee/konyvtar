@@ -2,7 +2,9 @@ package hu.rft.controller;
 import java.time.LocalDate;
 
 import hu.rft.konyvtar.Main;
-
+import hu.rft.db.DBConnector;
+import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 
 
 import javafx.fxml.FXML;
@@ -17,6 +19,12 @@ import javafx.stage.Stage;
 
 
 public class RegistrationController {
+    
+                DBConnector dbc;
+                
+                Alert errorAlert = new Alert(AlertType.ERROR);
+                Alert generalAlert = new Alert(AlertType.INFORMATION);
+                
 		private Main main;
 		private Stage dateStage;
 		@FXML
@@ -42,29 +50,43 @@ public class RegistrationController {
 	}
 	
 
-  public void setMainApp(Main main) {
+  public void setMainApp(Main main, DBConnector ctr) {
       this.main = main;
-        
+      dbc = ctr;
   }
   
   @FXML
 	private void RegBack() {
-		main.initLogin();
+		main.initLogin(false, dbc);
 
 	}
 
 	@FXML
 	private void Registration() {
 		String error=InputValid();
-		if(error.length()==0)
-			{
-			main.initLogin();
-			}
+		if(error.length()==0) {
+		
+                    try {
+                        
+                        dbc.registerUser(keresztnev.getText(), vezeteknev.getText(), datePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), felhasznalonev.getText(), jelszo.getText(), email.getText());
+                        
+                    } catch(SQLException ex) {
+                        
+                        errorAlert.setTitle("SQL Exception");
+                        errorAlert.setHeaderText("Hiba a regisztráció során:");
+                        errorAlert.setContentText(ex.getMessage());
+                        
+                        return;
+                    }
+                    
+                    main.initLogin(false, dbc);
+		
+                }
 		else {
 			  Alert alert = new Alert(AlertType.ERROR);
 
 				alert.setTitle("Nem megfelelő paraméterek");
-				alert.setHeaderText("Nem megfelelő a bemenő paraméterek!");
+				alert.setHeaderText("Nem megfelelőek a bemenő paraméterek!");
 				alert.setContentText(error);
 				
 				alert.showAndWait();

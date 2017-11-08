@@ -1,19 +1,21 @@
 package hu.rft.controller;
 
+import hu.rft.db.DBConnector;
 import hu.rft.konyvtar.Main;
 import javafx.fxml.FXML;
 
 public class PersonalDataController {
 	private Main main;
+        DBConnector dbc;
 	
-	  public void setMainApp(Main main) {
+	  public void setMainApp(Main main, DBConnector dbcon) {
 	      this.main = main;
-	        
+	      dbc = dbcon;
 	  }
 	
 	@FXML
 	  private void BackHome() {
-	  	main.UserMainPage();
+	  	main.UserMainPage(dbc);
 
 	  }
 }

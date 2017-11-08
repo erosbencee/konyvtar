@@ -1,6 +1,7 @@
 package hu.rft.konyvtar;
 
 
+
 import java.io.IOException;
 
 import hu.rft.controller.HomeController;
@@ -8,6 +9,7 @@ import hu.rft.controller.RegistrationController;
 import hu.rft.controller.RootLayoutController;
 import hu.rft.controller.HomePageController;
 import hu.rft.controller.PersonalDataController;
+import hu.rft.db.DBConnector;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -41,7 +43,7 @@ public class Main extends Application {
 		
 		Main.primaryStage.getIcons().add(new Image("/images/icon.png"));
 		
-		initLogin();
+		initLogin(true, null);
 	}
 	
 	/**
@@ -49,28 +51,27 @@ public class Main extends Application {
 	 * 
 	 */
 
-	public void initLogin() {
+	public void initLogin(boolean startUp, DBConnector dbc) {
 		try {
-			FXMLLoader loader = new FXMLLoader();
+                                                
+                        FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("/FXMLs/Login.fxml"));
 			rootLayout = (AnchorPane) loader.load();
 			
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			HomeController controller = loader.getController();
-            controller.setMainApp(this);
+                        controller.setMainApp(this, startUp, dbc);
 			primaryStage.show();
-			
-			
-
 			
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+                        
+		} 
 
 	}
 	
-	public void registration() {
+	public void registration(DBConnector dbc) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("/FXMLs/Registration.fxml"));
@@ -79,7 +80,7 @@ public class Main extends Application {
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			RegistrationController controller = loader.getController();
-            controller.setMainApp(this);
+            controller.setMainApp(this, dbc);
 			primaryStage.show();
 			
 			
@@ -89,7 +90,7 @@ public class Main extends Application {
 
 	}
 	
-	   public void initRootLayout() {
+	   public void initRootLayout(DBConnector dbc) {
 	        try {
 	           
 	            FXMLLoader loader = new FXMLLoader();
@@ -101,7 +102,7 @@ public class Main extends Application {
 	            Scene scene = new Scene(rootLayout2);
 	            primaryStage.setScene(scene);
 	            RootLayoutController controller = loader.getController();
-	            controller.setMainApp(this);
+	            controller.setMainApp(this, dbc);
 	            primaryStage.show();
 	            
 
@@ -113,7 +114,7 @@ public class Main extends Application {
 	        }
 	    }
 	
-	public void UserMainPage() {
+	public void UserMainPage(DBConnector dbc) {
 		try {
 			
 		    FXMLLoader loader = new FXMLLoader();
@@ -124,7 +125,7 @@ public class Main extends Application {
             rootLayout2.setCenter(Overview);
 
             HomePageController controller = loader.getController();
-			controller.setMainApp(this);
+			controller.setMainApp(this, dbc);
             
         
 			
@@ -135,7 +136,7 @@ public class Main extends Application {
 	}
 	
 	
-	public void PersonalData() {
+	public void PersonalData(DBConnector dbc) {
 		try {
 			
 		    FXMLLoader loader = new FXMLLoader();
@@ -146,7 +147,7 @@ public class Main extends Application {
             rootLayout2.setCenter(Overview);
 
             PersonalDataController controller = loader.getController();
-			controller.setMainApp(this);
+			controller.setMainApp(this, dbc);
             
         
 			
@@ -158,7 +159,7 @@ public class Main extends Application {
 	
 
 	
-	public void UserMainPageInit() {
+	/*public void UserMainPageInit() {
 		try {
 			
 			  FXMLLoader loader = new FXMLLoader();
@@ -181,7 +182,7 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 
-	}
+	}*/
 
 	/**
 	 * Visszaadja az ablakhoz tartozó Stage objektumot.
