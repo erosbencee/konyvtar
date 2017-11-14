@@ -8,6 +8,7 @@ import hu.rft.controller.HomeController;
 import hu.rft.controller.RegistrationController;
 import hu.rft.controller.RootLayoutController;
 import hu.rft.controller.HomePageController;
+import hu.rft.controller.LoanOverviewController;
 import hu.rft.controller.PersonalDataController;
 import hu.rft.db.DBConnector;
 import javafx.application.Application;
@@ -157,7 +158,29 @@ public class Main extends Application {
 
 	}
 	
+	
+	
+	
+	public void LoanOverview(DBConnector dbc) {
+		try {
+			
+		    FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/FXMLs/LoanOverview.fxml"));
+            AnchorPane Overview = (AnchorPane) loader.load();
 
+  
+            rootLayout2.setCenter(Overview);
+
+            LoanOverviewController controller = loader.getController();
+			controller.setMainApp(this, dbc);
+            
+        
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 	
 	/*public void UserMainPageInit() {
 		try {

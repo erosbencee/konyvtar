@@ -28,7 +28,7 @@
           <Menu mnemonicParsing="false" text="Kölcsönzések">
             <items>
                   <MenuItem mnemonicParsing="false" text="+ Új kölcsönzés" />
-              <MenuItem mnemonicParsing="false" text="Saját kölcsönzések megtekintése" />
+              <MenuItem mnemonicParsing="false" onAction="#LoanOverview" text="Saját kölcsönzések megtekintése" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Rendezvények">

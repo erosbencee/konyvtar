@@ -29,4 +29,11 @@ public class RootLayoutController {
 	  	main.PersonalData(dbc);
 
 	  }
-}
+	  
+	  @FXML
+	  private void LoanOverview(){
+		main.LoanOverview(dbc);
+	  }
+	 }
+	  
+

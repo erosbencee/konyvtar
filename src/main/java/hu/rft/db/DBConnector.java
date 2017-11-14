@@ -36,7 +36,8 @@ public class DBConnector {
     public DBConnector() throws SQLException, ClassNotFoundException {
         
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost/rft_konyvtar", "sysadmin", "sys4dmin");
+       // conn = DriverManager.getConnection("jdbc:mysql://localhost/rft_konyvtar", "sysadmin", "sys4dmin");
+        conn = DriverManager.getConnection("jdbc:mysql://25.78.139.144/rft_konyvtar", "sysadmin", "sys4dmin");
     }
     
     public void registerUser(String forename, String surname, String dob, String login, String pwd, String email) throws SQLException {
