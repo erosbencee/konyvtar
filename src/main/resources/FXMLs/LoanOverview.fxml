@@ -16,6 +16,11 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;">
                      <children>
+                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="214.0" style="-fx-background-color: #013440;" text="Kijelötek meghosszabbítása" textFill="WHITE" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="196.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                         <Button layoutX="909.0" layoutY="539.0" mnemonicParsing="false" onMouseClicked="#BackHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="28.0">
                            <font>
                               <Font size="14.0" />
@@ -23,11 +28,11 @@
                         </Button>
                         <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@tableHeader.css" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
                           <columns>
+                            <TableColumn prefWidth="50.0" />
                             <TableColumn prefWidth="100.0" text="Azonosító" />
-                            <TableColumn prefWidth="100.0" text="ISBN" />
                               <TableColumn prefWidth="175.0" text="Könyv címe" />
                               <TableColumn prefWidth="175.0" text="Szerző(k)" />
-                              <TableColumn prefWidth="120.0" text="Kölcszönzés ideje" />
+                              <TableColumn prefWidth="170.0" text="Kölcszönzés ideje" />
                               <TableColumn prefWidth="75.0" text="Lejár (nap múlva)" />
                               <TableColumn prefWidth="100.0" text="Státusz" />
                               <TableColumn minWidth="25.0" prefWidth="150.0" text="Késedelmi díj" />
@@ -47,8 +52,8 @@
                         </Button>
                         <TableView prefHeight="200.0" prefWidth="200.0" stylesheets="@tableHeader.css" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
                           <columns>
-                            <TableColumn prefWidth="100.0" text="Azonosító" />
-                            <TableColumn prefWidth="100.0" text="ISBN" />
+                            <TableColumn prefWidth="50.0" />
+                            <TableColumn prefWidth="150.0" text="Azonosító" />
                               <TableColumn prefWidth="200.0" text="Könyv címe" />
                               <TableColumn prefWidth="200.0" text="Szerző(k)" />
                               <TableColumn prefWidth="200.0" text="Kölcsönzés kezdete" />
