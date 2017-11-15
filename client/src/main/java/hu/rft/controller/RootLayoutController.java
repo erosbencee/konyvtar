@@ -1,38 +1,35 @@
 package hu.rft.controller;
 
-import hu.rft.db.DBConnector;
 import hu.rft.konyvtar.Main;
 import javafx.fxml.FXML;
 
 public class RootLayoutController {
 	private Main main;
-        DBConnector dbc;
 	
-	  public void setMainApp(Main main, DBConnector dbcon) {
+	  public void setMainApp(Main main) {
 	      this.main = main;
-	      dbc = dbcon;
 	  }
 	  
 	  @FXML
 	  private void Back() {
-	  	main.initLogin(false, dbc);
+	  	main.initLogin();
 
 	  }
 	  @FXML
 	  private void BackHome() {
-	  	main.UserMainPage(dbc);
+	  	main.UserMainPage();
 
 	  }
 	  
 	  @FXML
 	  private void PersonalData() {
-	  	main.PersonalData(dbc);
+	  	main.PersonalData();
 
 	  }
 	  
 	  @FXML
 	  private void LoanOverview(){
-		main.LoanOverview(dbc);
+		main.LoanOverview();
 	  }
 	 }
 	  

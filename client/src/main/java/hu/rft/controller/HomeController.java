@@ -1,6 +1,5 @@
 package hu.rft.controller;
 import hu.rft.konyvtar.Main;
-import hu.rft.db.DBConnector;
 
 
 
@@ -40,8 +39,6 @@ import javafx.stage.Stage;
 
 public class HomeController {
 	
-        DBConnector dbc;
-        boolean startUp;
         
         Alert errorAlert = new Alert(AlertType.ERROR);
         Alert generalAlert = new Alert(AlertType.INFORMATION);
@@ -66,47 +63,10 @@ public class HomeController {
 	}
 	
 
-  public void setMainApp(Main main, boolean status, DBConnector dbcon) {
+  public void setMainApp(Main main) {
+      
       this.main = main;
       
-      startUp = status;
-      
-      if(!startUp) {
-          
-          dbc = dbcon;
-          return;
-      }
-      
-      try {
-                
-                System.out.println("startUp is: " + Boolean.toString(startUp));
-                
-                if(startUp) {
-                    
-                    System.out.println("In new DBC");
-                    dbc = new DBConnector();
-                    
-                    generalAlert.setTitle("Sikeres kapcsolódás");
-                    generalAlert.setHeaderText("Sikeres kapcsolódás az adatbázishoz!");
-                    generalAlert.showAndWait();
-                    
-                }
-                
-            } catch(SQLException ex) {
-                
-                errorAlert.setTitle("SQL Exception");
-                errorAlert.setHeaderText("Nem lehet csatlakozni az adatbázishoz");
-                errorAlert.setContentText(ex.getMessage());
-                errorAlert.showAndWait();
-                System.exit(-1);
-                
-            } catch(ClassNotFoundException ex) {
-                
-                errorAlert.setTitle("Class Not Found Exception");
-                errorAlert.setContentText(ex.getMessage());
-                errorAlert.showAndWait();
-                System.exit(-1);
-            }
   }
 
 
@@ -117,39 +77,18 @@ public class HomeController {
   
   @FXML
  private void OpenRegistration(){
-	  main.registration(dbc);
+	  main.registration();
   }
 
   @FXML
  private void Login(){
      
-          if(!login.getText().isEmpty() && !jelszo.getText().isEmpty()) {
-              
-              try {
-                  
-                  boolean exists = dbc.checkLogin(login.getText(), jelszo.getText());
-                  
-                  if(exists) {
-                      
-                      main.initRootLayout(dbc);
-                      main.UserMainPage(dbc);
-                      
-                  } else {
-                      
-                      errorAlert.setTitle("Hiba");
-                      errorAlert.setHeaderText("A megadott felhasználónév-jelszó páros nem létezik!");
-                      errorAlert.showAndWait();
-                  }
-                  
-              } catch(SQLException ex) {
-                  
-                errorAlert.setTitle("SQL Exception");
-                errorAlert.setHeaderText("Hiba történt a kérés feldolgozása során:");
-                errorAlert.setContentText(ex.getMessage());
-                errorAlert.showAndWait();
-              }
-          }
-		 
+//          if(!login.getText().isEmpty() && !jelszo.getText().isEmpty()) {
+//              
+//              //TODO
+//          }
+            
+            main.UserMainPage();
   }
 
 
