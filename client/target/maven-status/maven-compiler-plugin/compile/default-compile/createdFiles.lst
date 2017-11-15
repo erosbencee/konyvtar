@@ -1,8 +1,0 @@
-hu\rft\db\DBConnector.class
-hu\rft\konyvtar\Main.class
-hu\rft\controller\RootLayoutController.class
-hu\rft\controller\PersonalDataController.class
-hu\rft\controller\HomeController.class
-hu\rft\controller\UserMainPageController.class
-hu\rft\controller\RegistrationController.class
-hu\rft\controller\HomePageController.class
