@@ -6,7 +6,7 @@
 package hu.rft.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,47 +30,56 @@ import javax.validation.constraints.Size;
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "USER_ID")
     private Integer userId;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
     @Column(name = "FORENAME")
     private String forename;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
     @Column(name = "SURNAME")
     private String surname;
+    
     @Basic(optional = false)
     @NotNull
     @Column(name = "DATE_OF_BIRTH")
     @Temporal(TemporalType.DATE)
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 15)
     @Column(name = "LOGIN_NAME")
     private String loginName;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "PASSWORD")
     private String password;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
     @Column(name = "EMAIL_ADDR")
     private String emailAddr;
+    
     @Column(name = "REGISTERED_ON")
     @Temporal(TemporalType.DATE)
-    private Date registeredOn;
+    private LocalDate registeredOn;
+    
     @Column(name = "LAST_LOGIN")
     @Temporal(TemporalType.DATE)
-    private Date lastLogin;
+    private LocalDate lastLogin;
 
     public User() {
     }
@@ -79,7 +88,7 @@ public class User implements Serializable {
         this.userId = userId;
     }
 
-    public User(Integer userId, String forename, String surname, Date dateOfBirth, String loginName, String password, String emailAddr) {
+    public User(Integer userId, String forename, String surname, LocalDate dateOfBirth, String loginName, String password, String emailAddr) {
         this.userId = userId;
         this.forename = forename;
         this.surname = surname;
@@ -113,11 +122,11 @@ public class User implements Serializable {
         this.surname = surname;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -145,19 +154,19 @@ public class User implements Serializable {
         this.emailAddr = emailAddr;
     }
 
-    public Date getRegisteredOn() {
+    public LocalDate getRegisteredOn() {
         return registeredOn;
     }
 
-    public void setRegisteredOn(Date registeredOn) {
+    public void setRegisteredOn(LocalDate registeredOn) {
         this.registeredOn = registeredOn;
     }
 
-    public Date getLastLogin() {
+    public LocalDate getLastLogin() {
         return lastLogin;
     }
 
-    public void setLastLogin(Date lastLogin) {
+    public void setLastLogin(LocalDate lastLogin) {
         this.lastLogin = lastLogin;
     }
 
