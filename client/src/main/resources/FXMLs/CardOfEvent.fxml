@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="270.0" maxWidth="970.0" minHeight="270.0" minWidth="970.0" prefHeight="270.0" prefWidth="970.0" style="-fx-background-color: #EFE7BE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.LoanOverviewController">
+   <children>
+      <GridPane layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="135.0" minHeight="135.0" prefHeight="135.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" style="-fx-background-color: #D97925;" text="Részt veszek az eseményen" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="138.0" fitWidth="971.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Documents/2017-2018_hetedik_félév/rft/eventDebrecen.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" maxHeight="45.0" maxWidth="150.0" minHeight="45.0" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #013440;" text="6." textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" maxHeight="45.0" maxWidth="150.0" minHeight="45.0" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #013440;" text="december" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" maxHeight="45.0" maxWidth="150.0" minHeight="45.0" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #013440;" text="10.00" textFill="WHITE" GridPane.rowIndex="3" />
+            <Label text="Debrecen múltja - előadás" textFill="#002635" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="Előadó: Wincs Eszter" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="2017. december 6-án 10 órától" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
