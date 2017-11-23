@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="640.0" minWidth="1024.0" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.HomePageController">
+   <children>
+      <TabPane layoutX="483.0" layoutY="216.0" prefHeight="200.0" prefWidth="200.0" styleClass="admin" stylesheets="@adminPages.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="2.0">
+        <tabs>
+          <Tab text="Aktív kölcsönzések listázása">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;">
+                     <children>
+                        <TableView layoutX="14.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                          <columns>
+                            <TableColumn prefWidth="100.0" text="Azonosító" />
+                            <TableColumn prefWidth="200.0" text="Felhasználó" />
+                              <TableColumn prefWidth="200.0" text="Könyv címe" />
+                              <TableColumn prefWidth="200.0" text="Könyv szerzője" />
+                              <TableColumn prefWidth="170.0" text="Kölcsönzés kezdete" />
+                              <TableColumn prefWidth="100.0" text="Sátusz" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Események listázása">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;">
+                     <children>
+                        <TableView layoutX="100.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                          <columns>
+                            <TableColumn prefWidth="100.0" text="Azonosító" />
+                            <TableColumn prefWidth="350.0" text="Esemény megnevezése" />
+                              <TableColumn prefWidth="200.0" text="Időpont" />
+                              <TableColumn prefWidth="100.0" text="Résztvevők" />
+                              <TableColumn prefWidth="220.0" text="Megjegyzés" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Naptár nézet">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

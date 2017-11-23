@@ -18,22 +18,22 @@
    <top>
       <AnchorPane prefHeight="160.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar layoutY="82.0" prefHeight="40.0" prefWidth="800.0" stylesheets="@userPages.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="108.0">
+            <MenuBar layoutY="82.0" prefHeight="40.0" prefWidth="800.0" stylesheets="@adminMenubar.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="108.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Adataim">
+          <Menu mnemonicParsing="false" text="Felhasználók">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#PersonalData" text="Személyes adatok" />
+              <MenuItem mnemonicParsing="false" onAction="#PersonalData" text="Felhasználói adatok módosítása" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Kölcsönzések">
             <items>
-                  <MenuItem mnemonicParsing="false" text="+ Új kölcsönzés" />
-              <MenuItem mnemonicParsing="false" onAction="#LoanOverview" text="Saját kölcsönzések megtekintése" />
+                  <MenuItem mnemonicParsing="false" text="Kölcsönzések áttekintése" />
+              <MenuItem mnemonicParsing="false" onAction="#LoanOverview" text="Könyv leltár kezelése" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Rendezvények">
             <items>
-              <MenuItem mnemonicParsing="false" text="Rendezvények megtekintése" />
+              <MenuItem mnemonicParsing="false" text="Rendezvények módosítása" />
             </items>
           </Menu>
         </menus>
@@ -54,7 +54,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Felhasználónév:">
+                  <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin:">
                      <font>
                         <Font size="14.0" />
                      </font>

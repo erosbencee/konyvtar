@@ -10,7 +10,7 @@
 
 <AnchorPane minHeight="640.0" minWidth="1024.0" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.LoanOverviewController">
    <children>
-      <TabPane layoutX="483.0" layoutY="216.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@mainMenuTab.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="2.0">
+      <TabPane layoutX="483.0" layoutY="216.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@userPages.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="2.0">
         <tabs>
           <Tab text="Aktív kölcsönzések megtekintése">
             <content>
@@ -26,7 +26,7 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@tableHeader.css" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
+                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
                           <columns>
                             <TableColumn prefWidth="50.0" />
                             <TableColumn prefWidth="100.0" text="Azonosító" />
@@ -50,7 +50,7 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <TableView prefHeight="200.0" prefWidth="200.0" stylesheets="@tableHeader.css" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
+                        <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
                           <columns>
                             <TableColumn prefWidth="50.0" />
                             <TableColumn prefWidth="150.0" text="Azonosító" />
