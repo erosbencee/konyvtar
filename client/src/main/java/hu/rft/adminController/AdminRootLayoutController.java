@@ -13,7 +13,37 @@ public class AdminRootLayoutController {
 	
 	@FXML
 	  private void BackHome() {
-	  	main.UserMainPage();
+	  	main.AdminHomePage();
+
+	  }
+	
+	@FXML
+	  private void BackLogin() {
+	  	main.initLogin();
+
+	  }
+	
+	@FXML
+	  private void AddNewBook() {
+	  	main.AdminAddNewBook();
+
+	  }
+	
+	@FXML
+	  private void EditEvent() {
+	  	main.AdminEditEvent();
+
+	  }
+	
+	@FXML
+	  private void EditUser() {
+	  	main.AdminEditUser();
+
+	  }
+	
+	@FXML
+	  private void BorrowsOverview() {
+	  	main.BorrowsOverview();
 
 	  }
 	
