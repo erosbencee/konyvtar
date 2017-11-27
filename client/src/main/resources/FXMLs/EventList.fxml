@@ -33,7 +33,7 @@
                      </font>
                   </Text>
                   <AnchorPane fx:id="firstEvent" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;" GridPane.rowIndex="1" />
-                  <AnchorPane fx:id="seondEvent" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;" GridPane.rowIndex="3" />
+                  <AnchorPane fx:id="secondEvent" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;" GridPane.rowIndex="3" />
                   <AnchorPane fx:id="thirdEvent" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;" GridPane.rowIndex="5" />
                </children>
                <padding>

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="270.0" maxWidth="970.0" minHeight="270.0" minWidth="970.0" prefHeight="270.0" prefWidth="970.0" style="-fx-background-color: #EFE7BE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.LoanOverviewController">
+<AnchorPane maxHeight="270.0" maxWidth="970.0" minHeight="270.0" minWidth="970.0" prefHeight="270.0" prefWidth="970.0" style="-fx-background-color: #EFE7BE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.CardOfEventController">
    <children>
       <GridPane layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -33,23 +33,23 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <ImageView fitHeight="138.0" fitWidth="971.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="cardCover" fitHeight="138.0" fitWidth="971.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../Documents/2017-2018_hetedik_félév/rft/eventDebrecen.jpg" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" maxHeight="45.0" maxWidth="150.0" minHeight="45.0" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #013440;" text="6." textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+            <Label fx:id="day" alignment="CENTER" maxHeight="45.0" maxWidth="150.0" minHeight="45.0" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #013440;" text="6." textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" maxHeight="45.0" maxWidth="150.0" minHeight="45.0" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #013440;" text="december" textFill="WHITE" GridPane.rowIndex="2">
+            <Label fx:id="month" alignment="CENTER" maxHeight="45.0" maxWidth="150.0" minHeight="45.0" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #013440;" text="december" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" maxHeight="45.0" maxWidth="150.0" minHeight="45.0" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #013440;" text="10.00" textFill="WHITE" GridPane.rowIndex="3" />
-            <Label text="Debrecen múltja - előadás" textFill="#002635" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="hour" alignment="CENTER" maxHeight="45.0" maxWidth="150.0" minHeight="45.0" minWidth="150.0" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #013440;" text="10.00" textFill="WHITE" GridPane.rowIndex="3" />
+            <Label fx:id="cardTitle" text="Debrecen múltja - előadás" textFill="#002635" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
@@ -57,7 +57,7 @@
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <Label text="Előadó: Wincs Eszter" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="cardNote" text="Előadó: Wincs Eszter" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <padding>
                   <Insets left="10.0" />
                </padding>
@@ -65,7 +65,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="2017. december 6-án 10 órától" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="cardNote2" text="2017. december 6-án 10 órától" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="14.0" />
                </font>

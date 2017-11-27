@@ -27,13 +27,13 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Kölcsönzések">
             <items>
-                  <MenuItem mnemonicParsing="false" text="+ Új kölcsönzés" />
+                  <MenuItem mnemonicParsing="false" onAction="#SearchBooks" text="+ Új kölcsönzés" />
               <MenuItem mnemonicParsing="false" onAction="#LoanOverview" text="Saját kölcsönzések megtekintése" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Rendezvények">
             <items>
-              <MenuItem mnemonicParsing="false" text="Rendezvények megtekintése" />
+              <MenuItem mnemonicParsing="false" onAction="#EventList" text="Rendezvények megtekintése" />
             </items>
           </Menu>
         </menus>

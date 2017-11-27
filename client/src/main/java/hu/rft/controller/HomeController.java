@@ -87,7 +87,7 @@ public class HomeController {
 //              
 //              //TODO
 //          }
-            
+            main.initRootLayout();
             main.UserMainPage();
   }
 

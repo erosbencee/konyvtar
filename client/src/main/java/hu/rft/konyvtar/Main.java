@@ -4,9 +4,11 @@ package hu.rft.konyvtar;
 
 import java.io.IOException;
 
+import hu.rft.controller.EventListController;
 import hu.rft.controller.HomeController;
 import hu.rft.controller.RegistrationController;
 import hu.rft.controller.RootLayoutController;
+import hu.rft.controller.SearchBooksController;
 import hu.rft.controller.HomePageController;
 import hu.rft.controller.LoanOverviewController;
 import hu.rft.controller.PersonalDataController;
@@ -181,30 +183,49 @@ public class Main extends Application {
 
 	}
 	
-	/*public void UserMainPageInit() {
+	public void SearchBooks() {
 		try {
 			
-			  FXMLLoader loader = new FXMLLoader();
-	            loader.setLocation(Main.class.getResource("/FXMLs/HomePage.fxml"));
-	            AnchorPane Overview = (AnchorPane) loader.load();
+		    FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/FXMLs/SearchBooks.fxml"));
+            AnchorPane Overview = (AnchorPane) loader.load();
 
-	  
-	            rootLayout2.setCenter(Overview);
+  
+            rootLayout2.setCenter(Overview);
 
-	            HomeController controller = loader.getController();
-				controller.setMainApp(this);
-				
-				
-			
+            SearchBooksController controller = loader.getController();
+			controller.setMainApp(this);
             
-			
-			
+        
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-	}*/
+	}
+	
+	public void EventList() {
+		try {
+			
+		    FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/FXMLs/EventList.fxml"));
+            AnchorPane Overview = (AnchorPane) loader.load();
+
+  
+            rootLayout2.setCenter(Overview);
+
+            EventListController controller = loader.getController();
+			controller.setMainApp(this);
+            
+        
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+
 
 	/**
 	 * Visszaadja az ablakhoz tartozó Stage objektumot.

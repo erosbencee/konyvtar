@@ -31,6 +31,17 @@ public class RootLayoutController {
 	  private void LoanOverview(){
 		main.LoanOverview();
 	  }
+	  
+	  @FXML
+	  private void SearchBooks(){
+		main.SearchBooks();
+	  }
+	  
+	  @FXML
+	  private void EventList(){
+		main.EventList();
+	  }
+	  
 	 }
 	  
 
