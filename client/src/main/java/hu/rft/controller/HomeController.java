@@ -87,8 +87,17 @@ public class HomeController {
 //              
 //              //TODO
 //          }
-            main.initRootLayout();
+	  
+	  	if(login.getText().equalsIgnoreCase("admin")){
+	  		main.initAdminRootLayout();
+	  		main.AdminHomePage();
+	  		
+	  	}
+	  	else {
+	  		main.initRootLayout();
             main.UserMainPage();
+	  	}
+          
   }
 
 

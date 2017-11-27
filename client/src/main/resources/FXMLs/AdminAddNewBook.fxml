@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="640.0" minWidth="1024.0" prefHeight="640.0" prefWidth="1024.0" stylesheets="@adminPages.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.LoanOverviewController">
+<AnchorPane minHeight="590.0" minWidth="1024.0" prefHeight="590.0" prefWidth="1024.0" stylesheets="@adminPages.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.adminController.AdminAddNewBookController">
    <children>
       <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="176.0" prefWidth="996.0" style="-fx-background-color: #EFE7BE;" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
          <children>
@@ -97,7 +97,7 @@
       <AnchorPane layoutX="62.0" layoutY="188.0" prefHeight="27.0" prefWidth="996.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="188.0" />
       <AnchorPane layoutX="203.0" layoutY="215.0" prefHeight="397.0" prefWidth="996.0" style="-fx-background-color: #EFE7BE;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="215.0">
          <children>
-            <Button layoutX="498.0" layoutY="372.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="28.0" />
+            <Button layoutX="498.0" layoutY="372.0" mnemonicParsing="false" onMouseClicked="#BackHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="28.0" />
             <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
               <columns>
                 <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="ISBN" />

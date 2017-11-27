@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="640.0" minWidth="1024.0" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.HomePageController">
+<AnchorPane minHeight="590.0" minWidth="1024.0" prefHeight="590.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.adminController.AdminHomePageController">
    <children>
       <TabPane layoutX="483.0" layoutY="216.0" prefHeight="200.0" prefWidth="200.0" styleClass="admin" stylesheets="@adminPages.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="2.0">
         <tabs>

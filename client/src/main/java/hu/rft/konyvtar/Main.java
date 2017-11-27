@@ -4,6 +4,12 @@ package hu.rft.konyvtar;
 
 import java.io.IOException;
 
+import hu.rft.adminController.AdminAddNewBookController;
+import hu.rft.adminController.AdminEditEventController;
+import hu.rft.adminController.AdminEditUserController;
+import hu.rft.adminController.AdminHomePageController;
+import hu.rft.adminController.AdminRootLayoutController;
+import hu.rft.adminController.BorrowsOverviewController;
 import hu.rft.controller.EventListController;
 import hu.rft.controller.HomeController;
 import hu.rft.controller.RegistrationController;
@@ -225,7 +231,136 @@ public class Main extends Application {
 
 	}
 	
+// admin surface
+	
+	  public void initAdminRootLayout() {
+	        try {
+	           
+	            FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/FXMLs/AdminRootLayout.fxml"));
+	            rootLayout2 = (BorderPane) loader.load();
 
+	         
+	            
+	            Scene scene = new Scene(rootLayout2);
+	            primaryStage.setScene(scene);
+	            AdminRootLayoutController controller = loader.getController();
+	            controller.setMainApp(this);
+	            primaryStage.show();
+	            
+
+	        
+	          
+	   
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	  
+	  public void AdminHomePage() {
+			try {
+				
+			    FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/FXMLs/AdminHomePage.fxml"));
+	            AnchorPane Overview = (AnchorPane) loader.load();
+
+	  
+	            rootLayout2.setCenter(Overview);
+
+	            AdminHomePageController controller = loader.getController();
+				controller.setMainApp(this);
+	            
+	        
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	  
+	  public void AdminAddNewBook() {
+			try {
+				
+			    FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/FXMLs/AdminAddNewBook.fxml"));
+	            AnchorPane Overview = (AnchorPane) loader.load();
+
+	  
+	            rootLayout2.setCenter(Overview);
+
+	            AdminAddNewBookController controller = loader.getController();
+				controller.setMainApp(this);
+	            
+	        
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	  
+	  public void AdminEditEvent() {
+			try {
+				
+			    FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/FXMLs/AdminEditEvent.fxml"));
+	            AnchorPane Overview = (AnchorPane) loader.load();
+
+	  
+	            rootLayout2.setCenter(Overview);
+
+	            AdminEditEventController controller = loader.getController();
+				controller.setMainApp(this);
+	            
+	        
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	  
+	  public void AdminEditUser() {
+			try {
+				
+			    FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/FXMLs/AdminEditUsers.fxml"));
+	            AnchorPane Overview = (AnchorPane) loader.load();
+
+	  
+	            rootLayout2.setCenter(Overview);
+
+	            AdminEditUserController controller = loader.getController();
+				controller.setMainApp(this);
+	            
+	        
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	  
+	  public void BorrowsOverview() {
+			try {
+				
+			    FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(Main.class.getResource("/FXMLs/BorrowsOverview.fxml"));
+	            AnchorPane Overview = (AnchorPane) loader.load();
+
+	  
+	            rootLayout2.setCenter(Overview);
+
+	            BorrowsOverviewController controller = loader.getController();
+				controller.setMainApp(this);
+	            
+	        
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
 
 	/**
 	 * Visszaadja az ablakhoz tartozó Stage objektumot.
