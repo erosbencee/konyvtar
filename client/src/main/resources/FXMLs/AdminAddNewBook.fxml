@@ -79,7 +79,7 @@
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Alcím:" GridPane.rowIndex="4">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Műfaj:" GridPane.rowIndex="4">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -102,7 +102,7 @@
               <columns>
                 <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="ISBN" />
                 <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Cím" />
-                  <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Alcím" />
+                  <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Műfaj" />
                   <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Szerző(k)" />
                   <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Kiadó" />
                   <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Státusz" />

@@ -28,11 +28,11 @@
                         </Button>
                         <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
                           <columns>
-                            <TableColumn prefWidth="100.0" text="Azonosító" />
+                            <TableColumn prefWidth="100.0" text="ISBN" />
                               <TableColumn prefWidth="220.0" text="Könyv címe" />
                               <TableColumn prefWidth="220.0" text="Szerző(k)" />
-                              <TableColumn prefWidth="220.0" text="Kiadó neve" />
-                              <TableColumn prefWidth="106.0" text="Kiadás éve" />
+                              <TableColumn prefWidth="175.0" text="Kiadó neve" />
+                              <TableColumn prefWidth="150.0" text="Műfaj" />
                               <TableColumn minWidth="25.0" prefWidth="107.0" />
                           </columns>
                         </TableView>
@@ -77,7 +77,7 @@
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kiadás éve:" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                  <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Műfaj:" GridPane.columnIndex="4" GridPane.rowIndex="3">
                      <font>
                         <Font size="18.0" />
                      </font>
