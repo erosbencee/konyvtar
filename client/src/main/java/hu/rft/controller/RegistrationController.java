@@ -2,7 +2,10 @@ package hu.rft.controller;
 import java.time.LocalDate;
 
 import hu.rft.konyvtar.Main;
-import java.sql.SQLException;
+import hu.rft.model.RestClient;
+import hu.rft.model.User;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 
 
@@ -22,6 +25,7 @@ public class RegistrationController {
                 
                 Alert errorAlert = new Alert(AlertType.ERROR);
                 Alert generalAlert = new Alert(AlertType.INFORMATION);
+                Alert confirmAlert = new Alert(AlertType.CONFIRMATION);
                 
 		private Main main;
 		private Stage dateStage;
@@ -60,10 +64,50 @@ public class RegistrationController {
 
 	@FXML
 	private void Registration() {
-		String error=InputValid();
-		if(error.length()==0) {
+            
+		String error = InputValid();
+                
+		if(error.length() == 0) {
 		
-                    //TODO
+                    User user = new User();
+                    
+                    RestClient rc = new RestClient();
+                    
+                    user.setForename(keresztnev.getText());
+                    user.setSurname(vezeteknev.getText());
+                    user.setDateOfBirth(datePicker.getValue());
+                    user.setLoginName(felhasznalonev.getText());
+                    user.setPassword(jelszo.getText());
+                    user.setEmailAddr(email.getText());
+                    user.setRegisteredOn(LocalDateTime.now());
+                    user.setLastLogin(LocalDateTime.of(2022, Month.JANUARY, 1, 0, 0, 0));
+                    
+                    try {
+                        
+                        rc.registerUser(user);
+                    
+                    } catch(Exception ex) {
+                        
+                        errorAlert.setTitle("Hiba");
+                        errorAlert.setHeaderText("Hiba történt a kérés végrehajtása során");
+                        errorAlert.setContentText(ex.getMessage());
+                        errorAlert.showAndWait();
+                        ex.printStackTrace();
+                        return;
+                    
+                    } finally {
+                        
+                        confirmAlert.setTitle("Siker");
+                        confirmAlert.setHeaderText("Sikeres regisztráció!");
+                        confirmAlert.showAndWait();
+                    }
+                    
+                } else {
+                    
+                    errorAlert.setTitle("Hiba");
+                    errorAlert.setHeaderText("Hiba a bevitt adatokban, kérem ellenőrízze!");
+                    errorAlert.setContentText(error);
+                    errorAlert.showAndWait();
                 }
 
 	}
