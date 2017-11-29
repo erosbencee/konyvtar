@@ -22,4 +22,29 @@ public class UserService {
         
         return ud.save(user);
     }
+    
+    public User findByID(int id) {
+        
+        return ud.findByID(id);
+    }
+    
+    public boolean isAdmin(int id) {
+        
+        return ud.isAdmin(id);
+    }
+    
+    public boolean grantAdmin(int id) {
+        
+        return ud.grantAdmin(id);
+    }
+    
+    public boolean revokeAdmin(int id) {
+        
+        return ud.revokeAdmin(id);
+    }
+    
+    public User login(String userName, String password) {
+        
+        return ud.login(userName, password);
+    }
 }

@@ -24,9 +24,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "kvt_active_loans")
-@NamedQueries({
-    @NamedQuery(name = "ActiveLoans.findAll", query = "SELECT a FROM ActiveLoans a")})
-public class ActiveLoans implements Serializable {
+public class ActiveLoan implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -52,14 +50,14 @@ public class ActiveLoans implements Serializable {
     @Column(name = "RETURN_DEADLINE")
     private LocalDate returnDeadline;
 
-    public ActiveLoans() {
+    public ActiveLoan() {
     }
 
-    public ActiveLoans(Integer loanId) {
+    public ActiveLoan(Integer loanId) {
         this.loanId = loanId;
     }
 
-    public ActiveLoans(Integer loanId, String bookIsbn, int quantity, int loanerId) {
+    public ActiveLoan(Integer loanId, String bookIsbn, int quantity, int loanerId) {
         this.loanId = loanId;
         this.bookIsbn = bookIsbn;
         this.quantity = quantity;
@@ -124,10 +122,10 @@ public class ActiveLoans implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ActiveLoans)) {
+        if (!(object instanceof ActiveLoan)) {
             return false;
         }
-        ActiveLoans other = (ActiveLoans) object;
+        ActiveLoan other = (ActiveLoan) object;
         if ((this.loanId == null && other.loanId != null) || (this.loanId != null && !this.loanId.equals(other.loanId))) {
             return false;
         }

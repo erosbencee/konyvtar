@@ -22,9 +22,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "kvt_books")
-@NamedQueries({
-    @NamedQuery(name = "Books.findAll", query = "SELECT b FROM Books b")})
-public class Books implements Serializable {
+public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -61,14 +59,14 @@ public class Books implements Serializable {
     @Column(name = "ONHAND_QTY")
     private int onhandQty;
 
-    public Books() {
+    public Book() {
     }
 
-    public Books(String isbnId) {
+    public Book(String isbnId) {
         this.isbnId = isbnId;
     }
 
-    public Books(String isbnId, String title, String author, String publisher, String genre, int onhandQty) {
+    public Book(String isbnId, String title, String author, String publisher, String genre, int onhandQty) {
         this.isbnId = isbnId;
         this.title = title;
         this.author = author;
@@ -143,10 +141,10 @@ public class Books implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Books)) {
+        if (!(object instanceof Book)) {
             return false;
         }
-        Books other = (Books) object;
+        Book other = (Book) object;
         if ((this.isbnId == null && other.isbnId != null) || (this.isbnId != null && !this.isbnId.equals(other.isbnId))) {
             return false;
         }

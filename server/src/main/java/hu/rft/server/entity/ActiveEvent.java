@@ -24,9 +24,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "kvt_active_events")
-@NamedQueries({
-    @NamedQuery(name = "ActiveEvents.findAll", query = "SELECT a FROM ActiveEvents a")})
-public class ActiveEvents implements Serializable {
+public class ActiveEvent implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -61,14 +59,14 @@ public class ActiveEvents implements Serializable {
     @Column(name = "EXPECTED_PPL")
     private int expectedPpl;
 
-    public ActiveEvents() {
+    public ActiveEvent() {
     }
 
-    public ActiveEvents(Integer eventId) {
+    public ActiveEvent(Integer eventId) {
         this.eventId = eventId;
     }
 
-    public ActiveEvents(Integer eventId, String eventName, int organizerId, String eventLocation, int maxPpl, int expectedPpl) {
+    public ActiveEvent(Integer eventId, String eventName, int organizerId, String eventLocation, int maxPpl, int expectedPpl) {
         this.eventId = eventId;
         this.eventName = eventName;
         this.organizerId = organizerId;
@@ -151,10 +149,10 @@ public class ActiveEvents implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ActiveEvents)) {
+        if (!(object instanceof ActiveEvent)) {
             return false;
         }
-        ActiveEvents other = (ActiveEvents) object;
+        ActiveEvent other = (ActiveEvent) object;
         if ((this.eventId == null && other.eventId != null) || (this.eventId != null && !this.eventId.equals(other.eventId))) {
             return false;
         }
