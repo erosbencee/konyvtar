@@ -1,21 +1,23 @@
 package hu.rft.controller;
 
 import hu.rft.konyvtar.Main;
+import hu.rft.model.User;
 import javafx.fxml.FXML;
 
 public class LoanOverviewController {
-	private Main main;
-    
 
-  public void setMainApp(Main main) {
-      this.main = main;
-     
-  }
+    private Main main;
+    private User user;
 
-@FXML
-  private void BackHome() {
-  	main.UserMainPage();
+    public void setMainApp(Main main, User current) {
+        this.main = main;
+        this.user = current;
+    }
 
-  }
+    @FXML
+    private void BackHome() {
+        main.UserMainPage(user);
+
+    }
 
 }

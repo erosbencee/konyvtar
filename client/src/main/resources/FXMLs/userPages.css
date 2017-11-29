@@ -178,4 +178,14 @@
 
 .table-view .label{
 	 -fx-text-fill: #013440;
+}   
+
+.combo-box .list-cell{
+    
+    -fx-text-fill: white;
+}
+
+.combo-box .list-view .list-cell{
+    
+    -fx-text-fill: black;
 }

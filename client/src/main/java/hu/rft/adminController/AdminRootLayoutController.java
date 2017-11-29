@@ -1,51 +1,53 @@
 package hu.rft.adminController;
 
 import hu.rft.konyvtar.Main;
+import hu.rft.model.User;
 import javafx.fxml.FXML;
 
 public class AdminRootLayoutController {
 
-	private Main main;
-	
-	  public void setMainApp(Main main) {
-	      this.main = main;
-	  }
-	
-	@FXML
-	  private void BackHome() {
-	  	main.AdminHomePage();
+    private Main main;
+    private User user;
 
-	  }
-	
-	@FXML
-	  private void BackLogin() {
-	  	main.initLogin();
+    public void setMainApp(Main main, User current) {
+        this.main = main;
+        this.user = current;
+    }
 
-	  }
-	
-	@FXML
-	  private void AddNewBook() {
-	  	main.AdminAddNewBook();
+    @FXML
+    private void BackHome() {
+        main.AdminHomePage(user);
 
-	  }
-	
-	@FXML
-	  private void EditEvent() {
-	  	main.AdminEditEvent();
+    }
 
-	  }
-	
-	@FXML
-	  private void EditUser() {
-	  	main.AdminEditUser();
+    @FXML
+    private void BackLogin() {
+        main.initLogin();
 
-	  }
-	
-	@FXML
-	  private void BorrowsOverview() {
-	  	main.BorrowsOverview();
+    }
 
-	  }
-	
-	
+    @FXML
+    private void AddNewBook() {
+        main.AdminAddNewBook(user);
+
+    }
+
+    @FXML
+    private void EditEvent() {
+        main.AdminEditEvent(user);
+
+    }
+
+    @FXML
+    private void EditUser() {
+        main.AdminEditUser(user);
+
+    }
+
+    @FXML
+    private void BorrowsOverview() {
+        main.BorrowsOverview(user);
+
+    }
+
 }
