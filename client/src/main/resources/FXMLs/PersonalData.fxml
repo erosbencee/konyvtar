@@ -64,27 +64,27 @@
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Cserepes" GridPane.columnIndex="1">
+                              <Text fx:id="lastnameText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Cserepes" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Virág" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Text fx:id="firstnameText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Virág" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="1990.10.10." GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Text fx:id="dayOfBirthText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="1990.10.10." GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="csvirag90" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Text fx:id="usernameText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="csvirag90" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="cserepes.v@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <Text fx:id="emailText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="cserepes.v@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -140,27 +140,27 @@
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="AZON001" GridPane.columnIndex="1">
+                              <Text fx:id="idText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="AZON001" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="2017.09.11." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Text fx:id="registrationText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="2017.09.11." GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="3 darab" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Text fx:id="numberOfBorrowsText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="3 darab" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="0 darab" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Text fx:id="borrowsOverDeadlineText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="0 darab" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="0 HUF" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <Text fx:id="fineText" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="0 HUF" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -264,22 +264,22 @@
                                     <Font size="16.0" />
                                  </font>
                               </Text>
-                              <TextField prefHeight="40.0" prefWidth="262.0" GridPane.columnIndex="1">
+                              <TextField fx:id="lastnameField" prefHeight="40.0" prefWidth="262.0" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </TextField>
-                              <TextField prefHeight="38.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <TextField fx:id="firstnameField" prefHeight="38.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </TextField>
-                              <TextField prefHeight="40.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <TextField fx:id="usernameField" prefHeight="40.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </TextField>
-                              <TextField prefHeight="40.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                              <TextField fx:id="emailField" prefHeight="40.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

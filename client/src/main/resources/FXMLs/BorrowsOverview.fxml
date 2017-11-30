@@ -69,10 +69,10 @@
                                           <Font size="16.0" />
                                        </font>
                                     </Text>
-                                    <ChoiceBox maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <ChoiceBox maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                                    <DatePicker maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <DatePicker maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                    <ChoiceBox fx:id="userChoiceBox" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <ChoiceBox fx:id="bookChoiceBox" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                    <DatePicker fx:id="startDatePicker" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <DatePicker fx:id="endDatePicker" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
                                  </children>
                               </GridPane>
                               <Button maxHeight="38.0" maxWidth="143.0" minHeight="38.0" minWidth="143.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #D97925;" text="Mentés" textFill="WHITE" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="126.0" />
@@ -82,15 +82,13 @@
                         <AnchorPane prefHeight="327.0" prefWidth="996.0" style="-fx-background-color: #EFE7BE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="201.0">
                            <children>
                               <Button layoutX="498.0" layoutY="372.0" mnemonicParsing="false" onMouseClicked="#BackHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="28.0" />
-                              <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <TableView fx:id="borrowTableView" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <columns>
-                                  <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Azonosító" />
-                                  <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Felhasználó" />
-                                    <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Könyv azonosítója" />
-                                    <TableColumn maxWidth="-1.0" minWidth="150.0" prefWidth="100.0" text="Kölcsönzés&#10;kezdete" />
-                                    <TableColumn maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" text="Kölcsönzés&#10;vége" />
-                                    <TableColumn minWidth="98.0" prefWidth="98.0" />
-                                    <TableColumn minWidth="98.0" prefWidth="98.0" />
+                                  <TableColumn fx:id="loanIdCol" maxWidth="-1.0" minWidth="120.0" prefWidth="120.0" text="Azonosító" />
+                                  <TableColumn fx:id="usernameCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Felhasználó" />
+                                    <TableColumn fx:id="bookIdCol" maxWidth="-1.0" minWidth="350.0" prefWidth="350.0" text="Könyv adatai" />
+                                    <TableColumn fx:id="startOfBorrowCol" maxWidth="-1.0" minWidth="170.0" prefWidth="170.0" text="Kölcsönzés&#10;kezdete" />
+                                    <TableColumn fx:id="endOfBorrowCol" maxWidth="-1.0" minWidth="170.0" prefWidth="170.0" text="Kölcsönzés&#10;vége" />
                                 </columns>
                               </TableView>
                               <Button layoutX="665.0" layoutY="331.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #AB1A25;" text="Kölcsönzés törlése" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="182.0" />
@@ -147,9 +145,9 @@
                                           <Font size="16.0" />
                                        </font>
                                     </Text>
-                                    <ChoiceBox maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <ChoiceBox maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                                    <DatePicker maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <ChoiceBox fx:id="waitingUserChoiceBox" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <ChoiceBox fx:id="waitingBookChoiceBox" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                    <DatePicker fx:id="startOfWaitingDatePicker" maxHeight="30.0" maxWidth="250.0" minHeight="30.0" minWidth="250.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                  </children>
                               </GridPane>
                               <Button maxHeight="38.0" maxWidth="143.0" minHeight="38.0" minWidth="143.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #D97925;" text="Mentés" textFill="WHITE" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="126.0" />
@@ -159,14 +157,13 @@
                         <AnchorPane prefHeight="327.0" prefWidth="996.0" style="-fx-background-color: #EFE7BE;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="201.0">
                            <children>
                               <Button layoutX="498.0" layoutY="372.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="28.0" />
-                              <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <TableView fx:id="waitingTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <columns>
-                                  <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Azonosító" />
-                                  <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Felhasználó" />
-                                    <TableColumn maxWidth="-1.0" minWidth="250.0" prefWidth="250.0" text="Könyv azonosítója" />
-                                    <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Felvétel időpontja" />
-                                    <TableColumn maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" text="Kölcsönzés&#10;engedélyezhető" />
-                                    <TableColumn minWidth="98.0" prefWidth="98.0" />
+                                  <TableColumn fx:id="waitingIdCol" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Azonosító" />
+                                  <TableColumn fx:id="waitingUserCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Felhasználó" />
+                                    <TableColumn fx:id="waitingBookCol" maxWidth="-1.0" minWidth="350.0" prefWidth="350.0" text="Könyv adatai" />
+                                    <TableColumn fx:id="startOfWaitingCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Felvétel időpontja" />
+                                    <TableColumn fx:id="statusOfWaitingCol" maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" text="Kölcsönzés&#10;engedélyezhető" />
                                 </columns>
                               </TableView>
                               <Button layoutX="665.0" layoutY="331.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #AB1A25;" text="Eltávolítás a várólistáról" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="182.0" />

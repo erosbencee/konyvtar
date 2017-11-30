@@ -26,16 +26,15 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
+                        <TableView fx:id="activeBorrowsTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
                           <columns>
-                            <TableColumn prefWidth="50.0" />
-                            <TableColumn prefWidth="100.0" text="Azonosító" />
-                              <TableColumn prefWidth="175.0" text="Könyv címe" />
-                              <TableColumn prefWidth="175.0" text="Szerző(k)" />
-                              <TableColumn prefWidth="170.0" text="Kölcszönzés ideje" />
-                              <TableColumn prefWidth="75.0" text="Lejár (nap múlva)" />
-                              <TableColumn prefWidth="100.0" text="Státusz" />
-                              <TableColumn minWidth="25.0" prefWidth="150.0" text="Késedelmi díj" />
+                            <TableColumn fx:id="loanIdCol" prefWidth="100.0" text="Azonosító" />
+                              <TableColumn fx:id="titleCol" prefWidth="175.0" text="Könyv címe" />
+                              <TableColumn fx:id="authorCol" prefWidth="175.0" text="Szerző(k)" />
+                              <TableColumn fx:id="dayOfBorrowCol" prefWidth="170.0" text="Kölcszönzés ideje" />
+                              <TableColumn fx:id="daysUntilDeadlineCol" prefWidth="75.0" text="Lejár (nap múlva)" />
+                              <TableColumn fx:id="statusCol" prefWidth="120.0" text="Státusz" />
+                              <TableColumn fx:id="fineCol" minWidth="25.0" prefWidth="150.0" text="Késedelmi díj" />
                           </columns>
                         </TableView>
                      </children></AnchorPane>
@@ -50,14 +49,13 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
+                        <TableView fx:id="archivedBorrowsTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
                           <columns>
-                            <TableColumn prefWidth="50.0" />
-                            <TableColumn prefWidth="150.0" text="Azonosító" />
-                              <TableColumn prefWidth="200.0" text="Könyv címe" />
-                              <TableColumn prefWidth="200.0" text="Szerző(k)" />
-                              <TableColumn prefWidth="200.0" text="Kölcsönzés kezdete" />
-                              <TableColumn prefWidth="175.0" text="Kölcsönzés lejárta" />
+                            <TableColumn fx:id="archiveLoanIdCol" prefWidth="150.0" text="Azonosító" />
+                              <TableColumn fx:id="archiveTitleCol" prefWidth="250.0" text="Könyv címe" />
+                              <TableColumn fx:id="archiveAuthorCol" prefWidth="200.0" text="Szerző(k)" />
+                              <TableColumn fx:id="archiveBorrowStartCol" prefWidth="200.0" text="Kölcsönzés kezdete" />
+                              <TableColumn fx:id="archiveBorrowEndCol" prefWidth="175.0" text="Kölcsönzés lejárta" />
                           </columns>
                         </TableView>
                      </children>

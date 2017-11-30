@@ -39,22 +39,22 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1">
+                  <TextField fx:id="lastnameField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4">
+                  <TextField fx:id="firstnameField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="ÉÉÉÉ.HH.NN." GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="birthdayField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="ÉÉÉÉ.HH.NN." GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                  <TextField fx:id="usernameField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -84,7 +84,7 @@
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextField fx:id="emailField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -92,22 +92,19 @@
                </children>
             </GridPane>
             <Button maxHeight="38.0" maxWidth="143.0" minHeight="38.0" minWidth="143.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #D97925;" text="Mentés" textFill="WHITE" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="126.0" />
-            <Button maxHeight="38.0" maxWidth="143.0" minHeight="38.0" minWidth="143.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #AB1A25;" text="Új jelszó beállítása" textFill="WHITE" AnchorPane.rightAnchor="182.0" AnchorPane.topAnchor="126.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="62.0" layoutY="188.0" prefHeight="27.0" prefWidth="996.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="188.0" />
       <AnchorPane layoutX="203.0" layoutY="215.0" prefHeight="397.0" prefWidth="996.0" style="-fx-background-color: #EFE7BE;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="215.0">
          <children>
             <Button layoutX="498.0" layoutY="372.0" mnemonicParsing="false" onMouseClicked="#BackHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="28.0" />
-            <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
+            <TableView fx:id="usersTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn maxWidth="-1.0" minWidth="60.0" prefWidth="60.0" text="Azon." />
-                <TableColumn maxWidth="-1.0" minWidth="175.0" prefWidth="175.0" text="Vezetéknév" />
-                  <TableColumn maxWidth="-1.0" minWidth="175.0" prefWidth="175.0" text="Keresztnév" />
-                  <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Felhasználónév" />
-                  <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="E-mail cím" />
-                  <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Új jelszó &#10;igénylés" />
-                  <TableColumn minWidth="100.0" prefWidth="100.0" />
+                <TableColumn fx:id="useridCol" maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" text="Azonosító" />
+                <TableColumn fx:id="lastnameCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Vezetéknév" />
+                  <TableColumn fx:id="firstnameCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Keresztnév" />
+                  <TableColumn fx:id="usernameCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Felhasználónév" />
+                  <TableColumn fx:id="emailCol" maxWidth="-1.0" minWidth="250.0" prefWidth="250.0" text="E-mail cím" />
               </columns>
             </TableView>
             <Button layoutX="508.0" layoutY="382.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #AB1A25;" text="Felhasználó törlése" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="182.0" />

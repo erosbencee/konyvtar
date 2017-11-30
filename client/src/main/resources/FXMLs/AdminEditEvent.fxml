@@ -40,22 +40,22 @@
                   <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="eventTitleField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="12:00" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <TextField fx:id="eventHourField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="12:00" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="ÉÉÉÉ.HH.NN." GridPane.columnIndex="4" GridPane.rowIndex="1">
+                  <TextField fx:id="eventDateField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="ÉÉÉÉ.HH.NN." GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                  <TextField fx:id="eventPlaceField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -75,17 +75,17 @@
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Borítókép:" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Terem:" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Megjegyzés:" GridPane.rowIndex="5">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Előadó:" GridPane.rowIndex="5">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <TextField fx:id="eventPerformerField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -99,14 +99,14 @@
       <AnchorPane layoutX="203.0" layoutY="285.0" onMouseClicked="#BackHome" prefHeight="327.0" prefWidth="996.0" style="-fx-background-color: #EFE7BE;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="215.0">
          <children>
             <Button layoutX="498.0" layoutY="372.0" mnemonicParsing="false" onMouseClicked="#BackHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="28.0" />
-            <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
+            <TableView fx:id="eventsTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Azonosító" />
-                <TableColumn maxWidth="-1.0" minWidth="250.0" prefWidth="250.0" text="Esemény címe" />
-                  <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Dátum" />
-                  <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Időpont" />
-                  <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Megjegyzés" />
-                  <TableColumn maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" text="Férőhelyek száma" />
+                <TableColumn fx:id="eventIdCol" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Azonosító" />
+                <TableColumn fx:id="eventTitleCol" maxWidth="-1.0" minWidth="250.0" prefWidth="250.0" text="Esemény címe" />
+                  <TableColumn fx:id="eventDateCol" maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" text="Dátum" />
+                  <TableColumn fx:id="eventHourCol" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Időpont" />
+                  <TableColumn fx:id="eventPerformerCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Előadó" />
+                  <TableColumn fx:id="eventPlaceCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Helyszín" />
                   <TableColumn minWidth="100.0" prefWidth="100.0" />
               </columns>
             </TableView>

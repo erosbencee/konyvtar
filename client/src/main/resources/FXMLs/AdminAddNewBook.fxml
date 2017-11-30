@@ -39,22 +39,22 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1">
+                  <TextField fx:id="isbnField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4">
+                  <TextField fx:id="authorField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="titleField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                  <TextField fx:id="publisherField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -84,7 +84,7 @@
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <TextField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextField fx:id="genreField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -98,14 +98,14 @@
       <AnchorPane layoutX="203.0" layoutY="215.0" prefHeight="397.0" prefWidth="996.0" style="-fx-background-color: #EFE7BE;" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="215.0">
          <children>
             <Button layoutX="498.0" layoutY="372.0" mnemonicParsing="false" onMouseClicked="#BackHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="28.0" />
-            <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
+            <TableView fx:id="booksOverviewTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="ISBN" />
-                <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Cím" />
-                  <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Műfaj" />
-                  <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Szerző(k)" />
-                  <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Kiadó" />
-                  <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Státusz" />
+                <TableColumn fx:id="isbnCol" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="ISBN" />
+                <TableColumn fx:id="titleCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Cím" />
+                  <TableColumn fx:id="genreCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Műfaj" />
+                  <TableColumn fx:id="authorCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Szerző(k)" />
+                  <TableColumn fx:id="publisherCol" maxWidth="-1.0" minWidth="200.0" prefWidth="200.0" text="Kiadó" />
+                  <TableColumn fx:id="isBorrowedCol" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Státusz" />
                   <TableColumn minWidth="100.0" prefWidth="100.0" />
               </columns>
             </TableView>
