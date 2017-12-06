@@ -1,9 +1,12 @@
 package hu.rft.controller;
 
 import hu.rft.konyvtar.Main;
+import hu.rft.model.ActiveLoan;
 import hu.rft.model.Book;
 import hu.rft.model.RestClient;
 import hu.rft.model.User;
+import java.time.LocalDate;
+import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -28,6 +31,7 @@ public class SearchBooksController {
     private RestClient rc = new RestClient();
     
     Alert error = new Alert(AlertType.ERROR);
+    Alert info = new Alert(AlertType.INFORMATION);
 
     public void setMainApp(Main main, User current) {
         this.main = main;
@@ -39,7 +43,7 @@ public class SearchBooksController {
     private Button searchBtn;
     
     @FXML
-    private TableView<Book> bookTable = new TableView<>();
+    private TableView<Book> bookTable;
     
     @FXML
     private TableColumn<Book, String> isbnCol;
@@ -81,8 +85,6 @@ public class SearchBooksController {
     private void initialize() {
         
         quantity.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5));
-//        quantity.setCellFactory(lv -> createIntCell());
-//        quantity.setButtonCell(createIntCell());
         
         isbnCol.setCellValueFactory(new PropertyValueFactory<Book, String>("isbnId"));
         titleCol.setCellValueFactory(new PropertyValueFactory<Book, String>("title"));
@@ -97,8 +99,27 @@ public class SearchBooksController {
     @FXML
     private void search() {
         
-        bookTable.getItems().setAll(rc.findBooks(titleField.getText(), authorField.getText(), publisherField.getText(), genreField.getText()));
-        bookTable.setVisible(true);      
+        Book needed = new Book();
+        
+        needed.setTitle(titleField.getText());
+        needed.setAuthor(authorField.getText());
+        needed.setPublisher(publisherField.getText());
+        needed.setGenre(genreField.getText());
+        
+        List<Book> searchResult = rc.findBooks(needed);
+        
+        if(searchResult.isEmpty()) {
+            
+            info.setTitle("Keresés");
+            info.setHeaderText("A megadott szűrőkre a keresés nem járt eredménnyel");
+            info.showAndWait();
+            
+        } else {
+            
+            bookTable.getItems().setAll(searchResult);
+            bookTable.setVisible(true);
+        }
+        
     }
     
     @FXML
@@ -120,6 +141,45 @@ public class SearchBooksController {
             error.setTitle("Hiba");
             error.setHeaderText("Nem válaszottál darabszámot!");
             error.showAndWait();
+            
+            return;
+        }
+        
+        int chosenQuantity = quantity.getSelectionModel().getSelectedItem();
+        
+        if(chosenQuantity > selected.getOnhandQty()) {
+            
+            error.setTitle("Hiba");
+            error.setHeaderText("A választott könyvből nincs készleten a megadott mennyiség!");
+            error.showAndWait();
+            
+            return;
+        }
+        
+        ActiveLoan loan = new ActiveLoan();
+        
+        loan.setBookIsbn(selected.getIsbnId());
+        loan.setLoanerId(user.getUserId());
+        loan.setQuantity(chosenQuantity);
+        loan.setStartDate(LocalDate.now());
+        loan.setReturnDeadline(LocalDate.now().plusWeeks(3));
+        
+        try {
+            
+            rc.startLoan(loan);
+            
+            info.setTitle("Siker");
+            info.setHeaderText("A kölcsönzés létrejött az alábbi adatokkal:");
+            info.setContentText("Könyv címe: " + selected.getTitle() 
+                              + "\nDarabszám: " + chosenQuantity 
+                              + "\nHatáridő: " + loan.getReturnDeadline().toString());
+            info.showAndWait();
+            
+        } catch(Exception e) {
+            
+            error.setTitle("Hiba");
+            error.setHeaderText("Hiba történt a kölcsönzési folyamat során!");
+            error.setContentText(e.getMessage());
         }
     }
     
@@ -127,24 +187,6 @@ public class SearchBooksController {
     private void BackHome() {
         main.UserMainPage(user);
 
-    }
-    
-    private ListCell<Integer> createIntCell() {
-        
-        return new ListCell<Integer>() {
-            
-            @Override
-            protected void updateItem(Integer item, boolean empty) {
-                super.updateItem(item, empty);
-
-                if (empty || item == null) {
-                    setText(null);
-                    setGraphic(null);
-                } else {
-                    setText(item.toString());
-                }
-            }
-        };
     }
 
 }

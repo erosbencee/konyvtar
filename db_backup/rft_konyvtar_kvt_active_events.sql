@@ -18,28 +18,33 @@ USE `rft_konyvtar`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `kvt_admins`
+-- Table structure for table `kvt_active_events`
 --
 
-DROP TABLE IF EXISTS `kvt_admins`;
+DROP TABLE IF EXISTS `kvt_active_events`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `kvt_admins` (
-  `USER_ID` int(6) NOT NULL,
-  `LOGIN_NAME` varchar(15) NOT NULL,
-  `GRANTED_ON` date NOT NULL,
-  UNIQUE KEY `USER_ID` (`USER_ID`),
-  UNIQUE KEY `LOGIN_NAME` (`LOGIN_NAME`)
+CREATE TABLE `kvt_active_events` (
+  `EVENT_ID` int(7) NOT NULL AUTO_INCREMENT,
+  `EVENT_NAME` varchar(120) NOT NULL,
+  `ORGANIZER_ID` int(6) NOT NULL,
+  `EVENT_LOCATION` varchar(50) NOT NULL,
+  `EVENT_BEGINS` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `EVENT_ENDS` timestamp NULL DEFAULT NULL,
+  `MAX_PPL` int(3) NOT NULL,
+  `EXPECTED_PPL` int(3) NOT NULL,
+  PRIMARY KEY (`EVENT_ID`),
+  UNIQUE KEY `EVENT_ID` (`EVENT_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `kvt_admins`
+-- Dumping data for table `kvt_active_events`
 --
 
-LOCK TABLES `kvt_admins` WRITE;
-/*!40000 ALTER TABLE `kvt_admins` DISABLE KEYS */;
-/*!40000 ALTER TABLE `kvt_admins` ENABLE KEYS */;
+LOCK TABLES `kvt_active_events` WRITE;
+/*!40000 ALTER TABLE `kvt_active_events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `kvt_active_events` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-08 10:45:59
+-- Dump completed on 2017-12-06 10:57:30

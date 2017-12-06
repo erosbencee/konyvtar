@@ -18,36 +18,33 @@ USE `rft_konyvtar`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `kvt_user`
+-- Table structure for table `kvt_event_history`
 --
 
-DROP TABLE IF EXISTS `kvt_user`;
+DROP TABLE IF EXISTS `kvt_event_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `kvt_user` (
-  `USER_ID` int(6) NOT NULL,
-  `FORENAME` varchar(50) NOT NULL,
-  `SURNAME` varchar(50) NOT NULL,
-  `DATE_OF_BIRTH` date NOT NULL,
-  `LOGIN_NAME` varchar(15) NOT NULL,
-  `PASSWORD` varchar(30) NOT NULL,
-  `EMAIL_ADDR` varchar(50) NOT NULL,
-  `REGISTERED_ON` date DEFAULT NULL,
-  `LAST_LOGIN` date DEFAULT NULL,
-  UNIQUE KEY `USER_ID` (`USER_ID`),
-  UNIQUE KEY `LOGIN_NAME` (`LOGIN_NAME`),
-  UNIQUE KEY `EMAIL_ADDR` (`EMAIL_ADDR`)
+CREATE TABLE `kvt_event_history` (
+  `EVENT_ID` int(7) NOT NULL,
+  `EVENT_NAME` varchar(120) NOT NULL,
+  `ORGANIZER_ID` int(6) NOT NULL,
+  `EVENT_LOCATION` varchar(50) NOT NULL,
+  `EVENT_BEGAN` timestamp NULL DEFAULT NULL,
+  `EVENT_ENDED` timestamp NULL DEFAULT NULL,
+  `EXPECTED_PPL` int(3) DEFAULT NULL,
+  `ATTENDED_PPL` int(3) DEFAULT NULL,
+  PRIMARY KEY (`EVENT_ID`),
+  UNIQUE KEY `EVENT_ID` (`EVENT_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `kvt_user`
+-- Dumping data for table `kvt_event_history`
 --
 
-LOCK TABLES `kvt_user` WRITE;
-/*!40000 ALTER TABLE `kvt_user` DISABLE KEYS */;
-INSERT INTO `kvt_user` VALUES (100000,'Dummy','User','2017-10-16','DumUsr','asd123','dummy@user.rft','2017-10-16','2017-10-16'),(100001,'Dummy2','Dummy2','1978-02-12','dumdum2','dum2pw','dum2@dum2.xd','2017-11-07','4000-01-01'),(100002,'Pista','Jóska','1983-06-16','jospis','joska','joska69@gmail.com','2017-11-08','4000-01-01');
-/*!40000 ALTER TABLE `kvt_user` ENABLE KEYS */;
+LOCK TABLES `kvt_event_history` WRITE;
+/*!40000 ALTER TABLE `kvt_event_history` DISABLE KEYS */;
+/*!40000 ALTER TABLE `kvt_event_history` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -59,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-08 10:45:59
+-- Dump completed on 2017-12-06 10:57:29

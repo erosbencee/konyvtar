@@ -27,10 +27,12 @@ DROP TABLE IF EXISTS `kvt_books`;
 CREATE TABLE `kvt_books` (
   `ISBN_ID` varchar(14) NOT NULL,
   `TITLE` varchar(50) NOT NULL,
-  `SUBTITLE` varchar(50) NOT NULL,
-  `WRITER` varchar(50) NOT NULL,
+  `SUBTITLE` varchar(50) DEFAULT NULL,
   `AUTHOR` varchar(50) NOT NULL,
+  `PUBLISHER` varchar(50) NOT NULL,
+  `GENRE` varchar(50) NOT NULL,
   `ONHAND_QTY` int(3) NOT NULL,
+  PRIMARY KEY (`ISBN_ID`),
   UNIQUE KEY `ISBN_ID` (`ISBN_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,6 +43,7 @@ CREATE TABLE `kvt_books` (
 
 LOCK TABLES `kvt_books` WRITE;
 /*!40000 ALTER TABLE `kvt_books` DISABLE KEYS */;
+INSERT INTO `kvt_books` VALUES ('9789630674799','Ízek bűvöletében',NULL,'Gordon Ramsay','T. Bálint Kiadó','gasztronómia',9),('9789631265330','Schon verstehe! - Már értem!','Magyar-német villanyszerelői szakszótár','Szesztai Csaba Károly','Magánkiadás','lexikon, enciklopédia',3),('9789632799452','India - A múltból a jövő felé',NULL,'Gáthy Vera','Typotex Elektronikus Kiadó Kft.','történelem',3),('9789634058045','Az',NULL,'Stephen King','Viking','horror, thriller',12),('9789634058397','A Gyűrűk Ura I-III.',NULL,'J. R. R. Tolkien','Allen & Unwin','fantasy',10),('9789634156123','Tüskevár',NULL,'Fekete István','Móra Ferenc Ifjusági Könyvkiadó Kft.','ifjúsági irodalom, szépirodalom',9),('9789638985750','E-mail-marketing',NULL,'Benyó Dániel','Kreatív Kontroll Kft.','reklám, marketing',2),('9789639301498','Tanuljuk meg a MySQL használatát 24 óra alatt',NULL,'Julie C. Meloni','Kiskapu Kiadó','számítástechnika',6),('9789639863354','Szoftverfejlesztés Java SE platformon',NULL,'Kövesdán Gábor','Szak Kiadó Kft.','számítástechnika, internet',4),('9789639868762','Az Ember a Fellegvárban',NULL,'Philip K. Dick','Agave Könyvek Kiadó Kft.','sci-fi',5);
 /*!40000 ALTER TABLE `kvt_books` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-08 10:45:59
+-- Dump completed on 2017-12-06 10:57:29

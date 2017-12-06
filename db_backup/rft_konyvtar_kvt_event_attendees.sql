@@ -18,30 +18,26 @@ USE `rft_konyvtar`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `kvt_active_loans`
+-- Table structure for table `kvt_event_attendees`
 --
 
-DROP TABLE IF EXISTS `kvt_active_loans`;
+DROP TABLE IF EXISTS `kvt_event_attendees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `kvt_active_loans` (
-  `LOAN_ID` int(7) NOT NULL,
-  `BOOK_ISBN` varchar(14) NOT NULL,
-  `QUANTITY` int(3) NOT NULL,
-  `LOANER_ID` int(6) NOT NULL,
-  `START_DATE` date NOT NULL,
-  `RETURN_DEADLINE` date NOT NULL,
-  UNIQUE KEY `LOAN_ID` (`LOAN_ID`)
+CREATE TABLE `kvt_event_attendees` (
+  `EVENT_ID` int(7) NOT NULL,
+  `USER_ID` int(6) NOT NULL,
+  `SIGNUP_DATE` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `kvt_active_loans`
+-- Dumping data for table `kvt_event_attendees`
 --
 
-LOCK TABLES `kvt_active_loans` WRITE;
-/*!40000 ALTER TABLE `kvt_active_loans` DISABLE KEYS */;
-/*!40000 ALTER TABLE `kvt_active_loans` ENABLE KEYS */;
+LOCK TABLES `kvt_event_attendees` WRITE;
+/*!40000 ALTER TABLE `kvt_event_attendees` DISABLE KEYS */;
+/*!40000 ALTER TABLE `kvt_event_attendees` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-08 10:45:59
+-- Dump completed on 2017-12-06 10:57:29

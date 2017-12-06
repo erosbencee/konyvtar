@@ -18,32 +18,32 @@ USE `rft_konyvtar`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `kvt_loan_history`
+-- Table structure for table `kvt_active_loans`
 --
 
-DROP TABLE IF EXISTS `kvt_loan_history`;
+DROP TABLE IF EXISTS `kvt_active_loans`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `kvt_loan_history` (
-  `LOAN_ID` int(7) NOT NULL,
+CREATE TABLE `kvt_active_loans` (
+  `LOAN_ID` int(7) NOT NULL AUTO_INCREMENT,
   `BOOK_ISBN` varchar(14) NOT NULL,
   `QUANTITY` int(3) NOT NULL,
   `LOANER_ID` int(6) NOT NULL,
-  `START_DATE` date NOT NULL,
-  `RETURN_DEADLINE` date NOT NULL,
-  `RETURNED_ON` date NOT NULL,
-  `RETURNED_LATE` varchar(1) NOT NULL,
+  `START_DATE` date DEFAULT NULL,
+  `RETURN_DEADLINE` date DEFAULT NULL,
+  PRIMARY KEY (`LOAN_ID`),
   UNIQUE KEY `LOAN_ID` (`LOAN_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `kvt_loan_history`
+-- Dumping data for table `kvt_active_loans`
 --
 
-LOCK TABLES `kvt_loan_history` WRITE;
-/*!40000 ALTER TABLE `kvt_loan_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `kvt_loan_history` ENABLE KEYS */;
+LOCK TABLES `kvt_active_loans` WRITE;
+/*!40000 ALTER TABLE `kvt_active_loans` DISABLE KEYS */;
+INSERT INTO `kvt_active_loans` VALUES (1,'9789634058045',2,1,'2017-12-05','2017-12-26');
+/*!40000 ALTER TABLE `kvt_active_loans` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-08 10:45:59
+-- Dump completed on 2017-12-06 10:57:30

@@ -62,15 +62,20 @@ public class BookDAO {
     
     public List<Book> findBooks(String title, String author, String publisher, String genre) {
         
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Publisher: " + publisher);
+        System.out.println("Genre: " + genre);
+        
         List<Book> result = em.createNativeQuery("SELECT * FROM KVT_BOOKS "
-                                                + "WHERE UPPER(TITLE) LIKE UPPER(%?1%) "
-                                                + "OR UPPER(AUTHOR) LIKE UPPER(%?2% "
-                                                + "OR UPPER(PUBLISHER) LIKE UPPER(%?3%) "
-                                                + "OR UPPER(GENRE) LIKE UPPER(%?4%)")
-                              .setParameter(1, title)
-                              .setParameter(2, author)
-                              .setParameter(3, publisher)
-                              .setParameter(4, genre)
+                                                + "WHERE UPPER(TITLE) LIKE UPPER(?1) "
+                                                + "AND UPPER(AUTHOR) LIKE UPPER(?2) "
+                                                + "AND UPPER(PUBLISHER) LIKE UPPER(?3) "
+                                                + "AND UPPER(GENRE) LIKE UPPER(?4)", Book.class)
+                              .setParameter(1, "%" + title + "%")
+                              .setParameter(2, "%" + author + "%")
+                              .setParameter(3, "%" + publisher + "%")
+                              .setParameter(4, "%" + genre + "%")
                               .getResultList();
         
         return result;

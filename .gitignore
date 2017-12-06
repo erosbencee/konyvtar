@@ -1,2 +1,4 @@
 /client/target/
 /client/nbactions.xml
+/server/target/
+/server/nbactions.xml

@@ -82,11 +82,25 @@ public class BookController {
         }
     }
     
-    @GetMapping("search/{title}/{author}/{publisher}/{genre}")
-    public ResponseEntity<List<Book>> findBooks(@PathVariable("title") String title, 
-                                                @PathVariable("author") String author, 
-                                                @PathVariable("publisher") String publisher, 
-                                                @PathVariable("genre") String genre) {
+    @PutMapping("search")
+    public ResponseEntity<List<Book>> findBooks(@RequestBody Book needed) { 
+        
+        String title = "";
+        String author = "";
+        String publisher = "";
+        String genre = "";
+        
+        if(needed.getTitle() != null)
+            title = needed.getTitle();
+        
+        if(needed.getAuthor() != null)
+            author = needed.getAuthor();
+        
+        if(needed.getPublisher() != null)
+            publisher = needed.getPublisher();
+        
+        if(needed.getGenre() != null)
+            genre = needed.getGenre();
         
         List<Book> result = bs.findBooks(title, author, publisher, genre);
         
