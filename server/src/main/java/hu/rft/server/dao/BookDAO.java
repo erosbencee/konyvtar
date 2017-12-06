@@ -39,12 +39,12 @@ public class BookDAO {
         return result;
     }
     
-    public Book findByISBN(int isbn) {
+    public Book findByISBN(String isbn) {
         
         return em.find(Book.class, isbn);
     }
     
-    public boolean deleteBook(int isbn) {
+    public boolean deleteBook(String isbn) {
         
         int rows = em.createNativeQuery("DELETE FROM KVT_BOOKS WHERE ISBN_ID = ?1")
                      .setParameter(1, isbn)

@@ -2,6 +2,7 @@
 package hu.rft.server.dao;
 
 import hu.rft.server.entity.User;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -46,9 +47,12 @@ public class UserDAO {
     
     public boolean isAdmin(int id) {
         
-        int occurence = em.createNativeQuery("SELECT COUNT(*) FROM KVT_ADMINS WHERE USER_ID = ?1")
+        int occurence = ((BigInteger)em.createNativeQuery("SELECT COUNT(*) FROM KVT_ADMINS WHERE USER_ID = ?1")
                           .setParameter(1, id)
-                          .getFirstResult();
+                          .getSingleResult()).intValue();
+        
+        System.out.println("id: " + id);
+        System.out.println("occurence: " + occurence);
         
         return occurence > 0;
     }

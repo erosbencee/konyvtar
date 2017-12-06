@@ -24,12 +24,12 @@ public class BookService {
         return bd.save(book);
     }
     
-    public Book findByISBN(int isbn) {
+    public Book findByISBN(String isbn) {
         
         return bd.findByISBN(isbn);
     }
     
-    public boolean deleteBook(int isbn) {
+    public boolean deleteBook(String isbn) {
         
         return bd.deleteBook(isbn);
     }

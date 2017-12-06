@@ -31,7 +31,10 @@
                            </font>
                         </Button>
                         <TableView fx:id="bookTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
-                          <columns>
+                            <placeholder>
+                                <Label text="A keresés gombra kattintva kereshetsz az elérhetö könyvek között"/>
+                            </placeholder>
+                            <columns>
                             <TableColumn fx:id="isbnCol" prefWidth="100.0" text="ISBN" />
                               <TableColumn fx:id="titleCol" prefWidth="220.0" text="Könyv címe" />
                               <TableColumn fx:id="authorCol" prefWidth="220.0" text="Szerző(k)" />

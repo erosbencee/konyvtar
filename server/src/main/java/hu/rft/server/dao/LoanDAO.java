@@ -31,6 +31,15 @@ public class LoanDAO {
             
             em.persist(loan);
             
+            Book b = (Book) em.createNativeQuery("SELECT * FROM KVT_BOOKS WHERE ISBN_ID = ?1", Book.class)
+                              .setParameter(1, loan.getBookIsbn())
+                              .getSingleResult();
+            
+            em.createNativeQuery("UPDATE KVT_BOOKS SET ONHAND_QTY = ?1 WHERE ISBN_ID = ?2")
+              .setParameter(1, b.getOnhandQty() - loan.getQuantity())
+              .setParameter(2, b.getIsbnId())
+              .executeUpdate();
+            
         } catch (Exception e) {
             
             result = e.getMessage();

@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
@@ -94,10 +95,14 @@ public class SearchBooksController {
         qtyCol.setCellValueFactory(new PropertyValueFactory<Book, String>("onhandQty"));
         
         bookTable.setVisible(false);
+        
+//        bookTable.setPlaceholder(new Label("A keresés gombra kattintva kereshetsz az elérhető könyvek között"));
     }
     
     @FXML
     private void search() {
+        
+        initialize();
         
         Book needed = new Book();
         
@@ -112,6 +117,7 @@ public class SearchBooksController {
             
             info.setTitle("Keresés");
             info.setHeaderText("A megadott szűrőkre a keresés nem járt eredménnyel");
+            info.setContentText("");
             info.showAndWait();
             
         } else {
@@ -181,6 +187,8 @@ public class SearchBooksController {
             error.setHeaderText("Hiba történt a kölcsönzési folyamat során!");
             error.setContentText(e.getMessage());
         }
+        
+        initialize();
     }
     
     @FXML

@@ -79,11 +79,11 @@ public class UserController {
         
         if(us.isAdmin(id)) {
             
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>("true", HttpStatus.OK);
             
         } else {
             
-            return new ResponseEntity<>(HttpStatus.CONFLICT);
+            return new ResponseEntity<>("false", HttpStatus.CONFLICT);
         }
     }
     

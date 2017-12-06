@@ -41,9 +41,9 @@ public class LoanController {
     }
     
     @GetMapping("getfor/{userid}")
-    public ResponseEntity<List<ActiveLoan>> getLoansForUser(@PathVariable int id) {
+    public ResponseEntity<List<ActiveLoan>> getLoansForUser(@PathVariable int userid) {
         
-        List<ActiveLoan> result = ls.getLoansForUser(id);
+        List<ActiveLoan> result = ls.getLoansForUser(userid);
         
         return new ResponseEntity<>(result, HttpStatus.OK);
     }

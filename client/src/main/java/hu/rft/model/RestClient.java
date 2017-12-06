@@ -93,7 +93,16 @@ public class RestClient {
         
         ResponseEntity<String> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, String.class, id);
         
-        return respEntity.getStatusCodeValue() == HttpStatus.OK.value();
+        String result = respEntity.getBody();
+        
+        if(result.equals("true")) {
+            
+            return true;
+            
+        } else {
+            
+            return false;
+        }
     }
     
     public List<Book> getAllBooks() {
@@ -145,7 +154,7 @@ public class RestClient {
         
     }
     
-    public Book findBookByISBN(int isbn) {
+    public Book findBookByISBN(String isbn) {
         
         HttpHeaders headers = new HttpHeaders();
         
@@ -155,7 +164,7 @@ public class RestClient {
         
         rt.setErrorHandler(new MyResponseErrorHandler());
         
-        String url = baseURL + "findbyisbn/{isbn}";
+        String url = baseURL + "book/findbyisbn/{isbn}";
         
         HttpEntity<?> reqEntity = new HttpEntity<>(headers);
         
@@ -182,7 +191,7 @@ public class RestClient {
             throw new RuntimeException();
     }
     
-    public List<ActiveLoan> getLoansForUser(int id) {
+    public List<ActiveLoan> getLoansForUser(int userid) {
         
         HttpHeaders headers = new HttpHeaders();
         
@@ -192,11 +201,11 @@ public class RestClient {
         
         rt.setErrorHandler(new MyResponseErrorHandler());
         
-        String url = baseURL + "getfor/{userid}";
+        String url = baseURL + "loan/getfor/{userid}";
         
         HttpEntity<?> reqEntity = new HttpEntity<>(headers);
         
-        ResponseEntity<ActiveLoan[]> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, ActiveLoan[].class, id);
+        ResponseEntity<ActiveLoan[]> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, ActiveLoan[].class, userid);
         
         ActiveLoan[] loans = respEntity.getBody();
         

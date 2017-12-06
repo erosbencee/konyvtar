@@ -26,7 +26,7 @@ public class BookController {
     }
     
     @GetMapping("findbyisbn/{isbn}")
-    public ResponseEntity<Book> findBookByISBN(@PathVariable int isbn) {
+    public ResponseEntity<Book> findBookByISBN(@PathVariable String isbn) {
         
         Book result = bs.findByISBN(isbn);
         
@@ -57,7 +57,7 @@ public class BookController {
     }
 
     @PutMapping("delete/{isbn}")
-    public ResponseEntity<String> deleteBook(@PathVariable int isbn) {
+    public ResponseEntity<String> deleteBook(@PathVariable String isbn) {
         
         if(bs.deleteBook(isbn)) {
             

@@ -189,3 +189,7 @@
     
     -fx-text-fill: black;
 }
+
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+}
