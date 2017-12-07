@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane minHeight="590.0" minWidth="1024.0" prefHeight="590.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.adminController.AdminHomePageController">
    <children>
@@ -14,40 +16,81 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;">
                      <children>
-                        <TableView layoutX="14.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                        <TableView fx:id="borrowsTable" layoutX="14.0" layoutY="20.0" prefHeight="452.0" prefWidth="968.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
                           <columns>
-                            <TableColumn prefWidth="100.0" text="Azonosító" />
-                            <TableColumn prefWidth="200.0" text="Felhasználó" />
-                              <TableColumn prefWidth="200.0" text="Könyv címe" />
-                              <TableColumn prefWidth="200.0" text="Könyv szerzője" />
-                              <TableColumn prefWidth="170.0" text="Kölcsönzés kezdete" />
-                              <TableColumn prefWidth="100.0" text="Sátusz" />
+                            <TableColumn fx:id="borrowIdCol" prefWidth="100.0" text="Azonosító" />
+                            <TableColumn fx:id="userOfBorrowCol" prefWidth="200.0" text="Felhasználó" />
+                              <TableColumn fx:id="borrowedTitleCol" prefWidth="200.0" text="Könyv címe" />
+                              <TableColumn fx:id="borrowedAuthorCol" prefWidth="150.0" text="Könyv szerzője" />
+                              <TableColumn fx:id="startOfBorrowCol" prefWidth="170.0" text="Kölcsönzés kezdete" />
+                              <TableColumn fx:id="endOfBorrowCol" prefWidth="170.0" text="Kölcsönzés lejár" />
                           </columns>
                         </TableView>
+                        <Button fx:id="setBorrowBackBtn" layoutX="570.0" layoutY="479.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="165.0" style="-fx-background-color: #013440;" text="Kölcsönzés visszahozva" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="196.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="loadBorrowsBtn" mnemonicParsing="false" prefHeight="38.0" prefWidth="165.0" style="-fx-background-color: #D97925;" text="Lekérdezés indítása" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="14.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                      </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="Felhasználók listázása">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;">
+                     <children>
+                        <Button fx:id="loadUsersBtn" mnemonicParsing="false" prefHeight="38.0" prefWidth="165.0" style="-fx-background-color: #D97925;" text="Lekérdezés indítása" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="14.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteUserBtn" layoutX="722.0" layoutY="486.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="165.0" style="-fx-background-color: #AB1A25;" text="Felhasználó törlése" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="196.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <TableView fx:id="usersTable" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                          <columns>
+                            <TableColumn fx:id="useridCol" prefWidth="125.0" text="Azonosító" />
+                              <TableColumn fx:id="lastnameCol" prefWidth="200.0" text="Keresztnév" />
+                            <TableColumn fx:id="firstnameCol" prefWidth="200.0" text="Vezetéknév" />
+                              <TableColumn fx:id="usernameCol" prefWidth="200.0" text="Felhasználónév" />
+                              <TableColumn fx:id="emailCol" prefWidth="250.0" text="E-mail cím" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
           <Tab text="Események listázása">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;">
                      <children>
-                        <TableView layoutX="100.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                        <TableView fx:id="eventsTable" layoutX="100.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
                           <columns>
-                            <TableColumn prefWidth="100.0" text="Azonosító" />
-                            <TableColumn prefWidth="350.0" text="Esemény megnevezése" />
-                              <TableColumn prefWidth="200.0" text="Időpont" />
-                              <TableColumn prefWidth="100.0" text="Résztvevők" />
-                              <TableColumn prefWidth="220.0" text="Megjegyzés" />
+                            <TableColumn fx:id="eventIdCol" prefWidth="100.0" text="Azonosító" />
+                            <TableColumn fx:id="eventNameCol" prefWidth="350.0" text="Esemény megnevezése" />
+                              <TableColumn fx:id="eventTimeCol" prefWidth="200.0" text="Időpont" />
+                              <TableColumn fx:id="eventPlaceCol" prefWidth="220.0" text="Helyszín" />
+                              <TableColumn fx:id="eventUsersCol" prefWidth="100.0" text="Résztvevők" />
                           </columns>
                         </TableView>
+                        <Button fx:id="loadEventsBtn" mnemonicParsing="false" prefHeight="38.0" prefWidth="165.0" style="-fx-background-color: #D97925;" text="Lekérdezés indítása" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="14.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteEventBtn" layoutX="737.0" layoutY="486.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="165.0" style="-fx-background-color: #AB1A25;" text="Esemény törlése" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="196.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                      </children></AnchorPane>
             </content>
           </Tab>
-            <Tab text="Naptár nézet">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #EFE7BE;" />
-              </content>
-            </Tab>
         </tabs>
       </TabPane>
    </children>

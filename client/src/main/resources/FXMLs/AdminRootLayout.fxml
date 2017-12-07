@@ -25,20 +25,14 @@
          <children>
             <MenuBar layoutY="82.0" prefHeight="40.0" prefWidth="800.0" stylesheets="@adminPages.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="108.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Felhasználók">
+          <Menu mnemonicParsing="false" text="Adatok">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#EditUser" text="Felhasználói adatok módosítása" />
+              <MenuItem mnemonicParsing="false" onAction="#EditUser" text="Saját adatok módosítása" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Kölcsönzések">
+          <Menu mnemonicParsing="false" text="Könyvek">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#BorrowsOverview" text="Kölcsönzések áttekintése" />
               <MenuItem mnemonicParsing="false" onAction="#AddNewBook" text="Könyv leltár kezelése" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Rendezvények">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#EditEvent" text="Rendezvények módosítása" />
             </items>
           </Menu>
         </menus>
