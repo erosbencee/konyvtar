@@ -30,23 +30,35 @@ public class RestClient {
         
         RestTemplate rt = new RestTemplate();
         
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
         String url = baseURL + "user/save";
         
-        HttpEntity<User> reqEntity = new HttpEntity<>(user, headers);
+        HttpEntity<?> reqEntity = new HttpEntity<>(user, headers);
         
-        ResponseEntity<User[]> respEntity = rt.postForEntity(url, reqEntity, User[].class);
+        ResponseEntity<String> respEntity = rt.postForEntity(url, reqEntity, String.class);
         
-//        User[] users = respEntity.getBody();
+        if(respEntity.getStatusCode() == HttpStatus.CONFLICT)
+            throw new RuntimeException(respEntity.getBody());
+    }
+    
+    public User updateUser(User user) {
         
-//        for(User u : users) {
-//            
-//            System.out.println("User ID:\t" + u.getUserId());
-//            System.out.println("Forename:\t" + u.getForename());
-//            System.out.println("Surname:\t" + u.getSurname());
-//            System.out.println("DOB:\t" + u.getDateOfBirth().toString());
-//            System.out.println("Register date:\t" + u.getRegisteredOn().toString());
-//            System.out.println("Last login date:\t" + u.getLastLogin().toString());
-//        }
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "user/update";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(user, headers);
+        
+        ResponseEntity<User> respEntity = rt.exchange(url, HttpMethod.PUT, reqEntity, User.class);
+        
+        return respEntity.getBody();
     }
     
     public User loginUser(String userName, String password) {
@@ -173,6 +185,27 @@ public class RestClient {
         return respEntity.getBody();
     }
     
+    public User findUserByID(int id) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "user/findbyid/{id}";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(headers);
+        
+        ResponseEntity<User> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, User.class, id);
+        
+        return respEntity.getBody();
+    }
+    
+    
+    
     public void startLoan(ActiveLoan loan) {
         
         HttpHeaders headers = new HttpHeaders();
@@ -210,6 +243,152 @@ public class RestClient {
         ActiveLoan[] loans = respEntity.getBody();
         
         return Arrays.asList(loans);
+    }
+    
+    public void newEvent(ActiveEvent event) {
+          
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "event/save";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(event, headers);
+        
+        ResponseEntity<String> respEntity = rt.postForEntity(url, reqEntity, String.class);
+        
+        if(respEntity.getStatusCode() == HttpStatus.CONFLICT)
+            throw new RuntimeException(respEntity.getBody());
+    }
+    
+    public List<ActiveEvent> getAllEvents() {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "event/getall";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(headers);
+        
+        ResponseEntity<ActiveEvent[]> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, ActiveEvent[].class);
+        
+        ActiveEvent[] events = respEntity.getBody();
+        
+        return Arrays.asList(events);
+    }
+    
+    public List<ActiveEvent> getEventsByOrganizer(int id) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "event/get/organizer/{id}";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(headers);
+        
+        ResponseEntity<ActiveEvent[]> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, ActiveEvent[].class, id);
+        
+        ActiveEvent[] events = respEntity.getBody();
+        
+        return Arrays.asList(events);
+    }
+    
+    public List<ActiveEvent> getEventsByAttendee(int id) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "event/get/attendee/{id}";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(headers);
+        
+        ResponseEntity<ActiveEvent[]> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, ActiveEvent[].class, id);
+        
+        ActiveEvent[] events = respEntity.getBody();
+        
+        return Arrays.asList(events);
+    }
+    
+    public String signUpToEvent(int eventid, int userid) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "event/singup/{eventid}/{userid}";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(headers);
+        
+        ResponseEntity<String> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, String.class, eventid, userid);
+        
+        if(respEntity.getStatusCode() == HttpStatus.CONFLICT)
+            throw new RuntimeException(respEntity.getBody());
+        
+        return respEntity.getBody();
+    }
+    
+    public String pullBackFromEvent(int eventid, int userid) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "event/pullback/{eventid}/{userid}";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(headers);
+        
+        ResponseEntity<String> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, String.class, eventid, userid);
+        
+        return respEntity.getBody();
+    }
+    
+    public String cancelEvent(int id) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "event/cancel/{id}";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(headers);
+        
+        ResponseEntity<String> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, String.class, id);
+        
+        if(respEntity.getStatusCode() == HttpStatus.CONFLICT)
+            throw new RuntimeException(respEntity.getBody());
+        
+        return respEntity.getBody();
     }
     
     

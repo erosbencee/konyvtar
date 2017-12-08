@@ -112,4 +112,12 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }
+    
+    @PutMapping("update")
+    public ResponseEntity<User> updateUser(@RequestBody User user) {
+        
+        User updated = us.update(user);
+        
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
 }

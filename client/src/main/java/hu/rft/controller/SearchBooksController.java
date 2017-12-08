@@ -68,9 +68,6 @@ public class SearchBooksController {
     private ComboBox<Integer> quantity;
     
     @FXML
-    private Button borrowBtn;
-    
-    @FXML
     private TextField titleField;
     
     @FXML
@@ -93,16 +90,10 @@ public class SearchBooksController {
         publisherCol.setCellValueFactory(new PropertyValueFactory<Book, String>("publisher"));
         genreCol.setCellValueFactory(new PropertyValueFactory<Book, String>("genre"));
         qtyCol.setCellValueFactory(new PropertyValueFactory<Book, String>("onhandQty"));
-        
-        bookTable.setVisible(false);
-        
-//        bookTable.setPlaceholder(new Label("A keresés gombra kattintva kereshetsz az elérhető könyvek között"));
     }
     
     @FXML
     private void search() {
-        
-        initialize();
         
         Book needed = new Book();
         
@@ -188,7 +179,7 @@ public class SearchBooksController {
             error.setContentText(e.getMessage());
         }
         
-        initialize();
+        search();
     }
     
     @FXML

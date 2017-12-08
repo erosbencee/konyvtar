@@ -183,6 +183,12 @@
 .combo-box .list-cell{
     
     -fx-text-fill: white;
+    
+}
+
+.combo-box {
+    
+    -fx-background-color: #013440;
 }
 
 .combo-box .list-view .list-cell{

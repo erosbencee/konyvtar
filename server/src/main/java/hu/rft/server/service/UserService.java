@@ -47,4 +47,9 @@ public class UserService {
         
         return ud.login(userName, password);
     }
+    
+    public User update(User user) {
+        
+        return ud.update(user);
+    }
 }

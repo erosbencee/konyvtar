@@ -185,7 +185,7 @@ public class Main extends Application {
 
     }
 
-    public void EventList() {
+    public void EventList(User current) {
         try {
 
             FXMLLoader loader = new FXMLLoader();
@@ -195,7 +195,7 @@ public class Main extends Application {
             rootLayout2.setCenter(Overview);
 
             EventListController controller = loader.getController();
-            controller.setMainApp(this);
+            controller.setMainApp(this, current);
 
         } catch (IOException e) {
             e.printStackTrace();

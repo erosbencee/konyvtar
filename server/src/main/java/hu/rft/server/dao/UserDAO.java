@@ -28,9 +28,33 @@ public class UserDAO {
         
         String result = "";
         
+        int nameExists = ((BigInteger)em.createNativeQuery("SELECT COUNT(*) FROM KVT_USER WHERE BINARY LOGIN_NAME = ?1")
+                           .setParameter(1, user.getLoginName())
+                           .getSingleResult())
+                           .intValue();
+        
+        int emailExists = ((BigInteger)em.createNativeQuery("SELECT COUNT(*) FROM KVT_USER WHERE EMAIL_ADDR = ?1")
+                           .setParameter(1, user.getEmailAddr())
+                           .getSingleResult())
+                           .intValue();
+        
+        if(nameExists > 0) {
+            
+            result = "Ez a felhasználónév már foglalt!";
+            
+            return result;
+        }
+        
+        if(emailExists > 0) {
+            
+            result = "Ez az email cím már használatban van!";
+            
+            return result;
+        }
+        
         try {
             
-            em.persist(em);
+            em.persist(user);
             
         } catch (Exception e) {
             
@@ -89,8 +113,8 @@ public class UserDAO {
         try {
             
             user = (User) em.createNativeQuery("SELECT * FROM KVT_USER "
-                                                  + "WHERE LOGIN_NAME = ?1 "
-                                                  + "AND PASSWORD = ?2", User.class)
+                                                  + "WHERE BINARY LOGIN_NAME = ?1 "
+                                                  + "AND BINARY PASSWORD = ?2", User.class)
                              .setParameter(1, userName)
                              .setParameter(2, password)
                              .getSingleResult();
@@ -107,5 +131,10 @@ public class UserDAO {
         }
         
         return user;
+    }
+    
+    public User update(User user) {
+        
+        return em.merge(user);
     }
 }

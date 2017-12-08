@@ -3,7 +3,6 @@ package hu.rft.server.service;
 
 import hu.rft.server.dao.BookDAO;
 import hu.rft.server.entity.Book;
-import hu.rft.server.entity.User;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

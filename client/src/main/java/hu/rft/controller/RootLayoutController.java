@@ -62,7 +62,7 @@ public class RootLayoutController {
 
     @FXML
     private void EventList() {
-        main.EventList();
+        main.EventList(user);
     }
 
 }

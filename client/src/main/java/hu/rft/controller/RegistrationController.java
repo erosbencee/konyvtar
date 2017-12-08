@@ -86,6 +86,8 @@ public class RegistrationController {
                 confirmAlert.setTitle("Siker");
                 confirmAlert.setHeaderText("Sikeres regisztráció!");
                 confirmAlert.showAndWait();
+                
+                main.initLogin();
 
             } catch (Exception ex) {
 

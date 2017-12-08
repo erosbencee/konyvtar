@@ -24,6 +24,11 @@ public class LoanService {
         return ld.save(loan);
     }
     
+    public boolean returned(ActiveLoan loan) {
+        
+        return ld.returned(loan);
+    }
+    
     public List<ActiveLoan> getLoansForUser(int id) {
         
         return ld.getLoansForUser(id);
