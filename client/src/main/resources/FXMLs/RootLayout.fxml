@@ -38,7 +38,7 @@
           </Menu>
                   <Menu mnemonicParsing="false" text="Súgó">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Gyakran ismételt kérdések" />
+                      <MenuItem mnemonicParsing="false" onAction="#FAQOverview" text="Gyakran ismételt kérdések" />
                     </items>
                   </Menu>
         </menus>

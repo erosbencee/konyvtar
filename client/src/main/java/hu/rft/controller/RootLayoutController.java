@@ -64,5 +64,10 @@ public class RootLayoutController {
     private void EventList() {
         main.EventList(user);
     }
+    
+    @FXML
+    private void FAQOverview() {
+        main.FAQOverview(user);
+    }
 
 }

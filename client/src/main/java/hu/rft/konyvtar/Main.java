@@ -9,6 +9,7 @@ import hu.rft.adminController.AdminHomePageController;
 import hu.rft.adminController.AdminRootLayoutController;
 import hu.rft.adminController.BorrowsOverviewController;
 import hu.rft.controller.EventListController;
+import hu.rft.controller.FAQOverviewController;
 import hu.rft.controller.HomeController;
 import hu.rft.controller.RegistrationController;
 import hu.rft.controller.RootLayoutController;
@@ -195,6 +196,24 @@ public class Main extends Application {
             rootLayout2.setCenter(Overview);
 
             EventListController controller = loader.getController();
+            controller.setMainApp(this, current);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    
+    public void FAQOverview(User current) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/FXMLs/FAQOverview.fxml"));
+            AnchorPane Overview = (AnchorPane) loader.load();
+
+            rootLayout2.setCenter(Overview);
+
+            FAQOverviewController controller = loader.getController();
             controller.setMainApp(this, current);
 
         } catch (IOException e) {

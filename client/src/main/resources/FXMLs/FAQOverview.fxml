@@ -7,8 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="640.0" maxWidth="1024.0" minHeight="640.0" minWidth="1024.0" prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: #EFE7BE;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane maxHeight="640.0" maxWidth="1024.0" minHeight="640.0" minWidth="1024.0" prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: #EFE7BE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.FAQOverviewController">
    <children>
       <GridPane layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
         <columnConstraints>
@@ -41,47 +40,47 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fx:id="questionOne" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kérdés" GridPane.rowIndex="1">
+            <Text fx:id="questionOne" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Észrevettem, hogy a regisztráció során rosszul adtam meg valamelyik adatomat. Hogyan tudom ezt módosítani?" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionTwo" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kérdés" GridPane.rowIndex="3">
+            <Text fx:id="questionTwo" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="2. Szeretnék új jelszót beállítani. Mit kell tennem?" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionThree" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kérdés" GridPane.rowIndex="5">
+            <Text fx:id="questionThree" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Hogyan tudok új kölcsönzést indítani?" GridPane.rowIndex="5">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionFour" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kérdés" GridPane.rowIndex="7">
+            <Text fx:id="questionFour" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="4. Mennyi időre szól egy kölcsönzés?" GridPane.rowIndex="7">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionFive" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kérdés" GridPane.rowIndex="9">
+            <Text fx:id="questionFive" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="5. Meg tudom hosszabítani a jelenlegi kölcsönzésemet?" GridPane.rowIndex="9">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionSix" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kérdés" GridPane.rowIndex="11">
+            <Text fx:id="questionSix" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="6. Hogyan tudom meghosszabítani a kölcsönzésemet, ha hamarosan lejár?" GridPane.rowIndex="11">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionSeven" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kérdés" GridPane.rowIndex="13">
+            <Text fx:id="questionSeven" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="7. Mi történik ha nem juttatom vissza a könyvet a kölcsönzés lejárta után?" GridPane.rowIndex="13">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionEight" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kérdés" GridPane.rowIndex="15">
+            <Text fx:id="questionEight" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="8. Hogyan tudok jelentkezni a könyvtár által szervezett rendezvényekre?" GridPane.rowIndex="15">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionNine" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="Kérdés" GridPane.rowIndex="17">
+            <Text fx:id="questionNine" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="9. Mégsem szeretnék részt venni egy rendezvényen. Mit kell tennem?" GridPane.rowIndex="17">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
