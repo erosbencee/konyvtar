@@ -159,7 +159,7 @@ public class SearchBooksController {
         loan.setLoanerId(user.getUserId());
         loan.setQuantity(chosenQuantity);
         loan.setStartDate(LocalDate.now());
-        loan.setReturnDeadline(LocalDate.now().plusWeeks(3));
+        loan.setReturnDeadline(LocalDate.now().plusWeeks(6));
         
         try {
             

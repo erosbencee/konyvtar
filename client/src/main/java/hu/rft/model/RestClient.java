@@ -1,8 +1,6 @@
 package hu.rft.model;
 
-import java.net.URI;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -11,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
 
 public class RestClient {
@@ -59,6 +56,24 @@ public class RestClient {
         ResponseEntity<User> respEntity = rt.exchange(url, HttpMethod.PUT, reqEntity, User.class);
         
         return respEntity.getBody();
+    }
+    
+    public void deleteUser(User user) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "user/delete";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(user, headers);
+        
+        ResponseEntity<String> respEntity = rt.exchange(url, HttpMethod.PUT, reqEntity, String.class);
+        
     }
     
     public User loginUser(String userName, String password) {
@@ -391,5 +406,110 @@ public class RestClient {
         return respEntity.getBody();
     }
     
+    public String closeEvent(ActiveEvent event) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "event/close";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(event, headers);
+        
+        ResponseEntity<String> respEntity = rt.exchange(url, HttpMethod.PUT, reqEntity, String.class);
+        
+        if(respEntity.getStatusCode() == HttpStatus.CONFLICT)
+            throw new RuntimeException(respEntity.getBody());
+        
+        return respEntity.getBody();
+    }
+    
+    public String closeBorrow(ActiveLoan loan) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "loan/close";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(loan, headers);
+        
+        ResponseEntity<String> respEntity = rt.exchange(url, HttpMethod.PUT, reqEntity, String.class);
+        
+        if(respEntity.getStatusCode() == HttpStatus.CONFLICT)
+            throw new RuntimeException(respEntity.getBody());
+        
+        return respEntity.getBody();
+    }
+    
+    public List<ActiveLoan> getAllBorrows() {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "loan/getall";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(headers);
+        
+        ResponseEntity<ActiveLoan[]> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, ActiveLoan[].class);
+        
+        ActiveLoan[] loans = respEntity.getBody();
+        
+        return Arrays.asList(loans);
+    }
+    
+    public List<User> getAllUsers() {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "user/getall";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(headers);
+        
+        ResponseEntity<User[]> respEntity = rt.exchange(url, HttpMethod.GET, reqEntity, User[].class);
+        
+        User[] users = respEntity.getBody();
+        
+        return Arrays.asList(users);
+    }
+    
+    public void newBook(Book book) {
+        
+        HttpHeaders headers = new HttpHeaders();
+        
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        RestTemplate rt = new RestTemplate();
+        
+        rt.setErrorHandler(new MyResponseErrorHandler());
+        
+        String url = baseURL + "book/save";
+        
+        HttpEntity<?> reqEntity = new HttpEntity<>(book, headers);
+        
+        ResponseEntity<String> respEntity = rt.postForEntity(url, reqEntity, String.class);
+        
+        if(respEntity.getStatusCode() == HttpStatus.CONFLICT)
+            throw new RuntimeException(respEntity.getBody());
+    }
     
 }

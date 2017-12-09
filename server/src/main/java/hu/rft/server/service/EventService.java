@@ -46,4 +46,9 @@ public class EventService {
         
         return ed.pullBack(eventID, userID);
     }
+    
+    public boolean closeEvent(ActiveEvent event) {
+        
+        return ed.closeEvent(event);
+    }
 }

@@ -99,4 +99,19 @@ public class EventController {
             return new ResponseEntity<>("Hiba a lejelentkezés során!", HttpStatus.CONFLICT);
         }
     }
+    
+    @PutMapping("close")
+    public ResponseEntity<String> closeEvent(@RequestBody ActiveEvent event) {
+        
+        boolean success = es.closeEvent(event);
+        
+        if(success) {
+            
+            return new ResponseEntity<>("A rendezvény lezárult!", HttpStatus.OK);
+        
+        } else {
+            
+            return new ResponseEntity<>("Hiba a lezárás során!", HttpStatus.CONFLICT);
+        }
+    }
 }

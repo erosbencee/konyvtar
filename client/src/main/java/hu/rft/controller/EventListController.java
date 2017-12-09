@@ -1,8 +1,5 @@
 package hu.rft.controller;
 
-import java.io.File;
-import java.io.IOException;
-
 import hu.rft.konyvtar.Main;
 import hu.rft.model.ActiveEvent;
 import hu.rft.model.RestClient;
@@ -12,12 +9,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -111,14 +104,14 @@ public class EventListController {
     private void initialize() {
         
         timeComboBox.setItems(FXCollections.observableArrayList("00:00", "01:00", "02:00", 
-                                                                "03:00", "04:00", "05:00", 
-                                                                "06:00", "07:00", "08:00", 
-                                                                "09:00", "10:00", "11:00", 
-                                                                "12:00", "13:00", "14:00", 
-                                                                "15:00", "16:00", "17:00",
-                                                                "18:00", "19:00", "20:00",
-                                                                "21:00", "22:00", "23:00"
-                                                                ));
+                                                                      "03:00", "04:00", "05:00", 
+                                                                      "06:00", "07:00", "08:00", 
+                                                                      "09:00", "10:00", "11:00", 
+                                                                      "12:00", "13:00", "14:00", 
+                                                                      "15:00", "16:00", "17:00",
+                                                                      "18:00", "19:00", "20:00",
+                                                                      "21:00", "22:00", "23:00"
+                                                                     ));
 
         dateOfEventCol1.setCellValueFactory(new PropertyValueFactory<ActiveEvent, LocalDateTime>("eventBegins"));
         dateOfEventCol1.setCellFactory(col -> new TableCell<ActiveEvent, LocalDateTime>() {
@@ -153,7 +146,30 @@ public class EventListController {
             }
         });
         
-        headcountCol1.setCellValueFactory(new PropertyValueFactory<ActiveEvent, Integer>("expectedPpl"));
+        headcountCol1.setCellValueFactory(new PropertyValueFactory<ActiveEvent, Integer>("eventId"));
+        headcountCol1.setCellFactory(col -> new TableCell<ActiveEvent, Integer>() {
+            
+            @Override
+            protected void updateItem(Integer eventid, boolean empty) {
+                super.updateItem(eventid, empty);
+                if (empty) {
+                    setText(null);
+                } else {
+                    
+                    List<ActiveEvent> events = rc.getAllEvents();
+                    
+                    ActiveEvent ae = new ActiveEvent();
+                    
+                    for(ActiveEvent c : events) {
+                        
+                        if(c.getEventId().equals(eventid))
+                            ae = c;
+                    }
+                    
+                    setText(ae.getExpectedPpl() + "/" + ae.getMaxPpl());
+                }
+            }
+        });
         
         dateOfEventCol2.setCellValueFactory(new PropertyValueFactory<ActiveEvent, LocalDateTime>("eventBegins"));
         dateOfEventCol2.setCellFactory(col -> new TableCell<ActiveEvent, LocalDateTime>() {
@@ -188,7 +204,30 @@ public class EventListController {
             }
         });
         
-        headcountCol2.setCellValueFactory(new PropertyValueFactory<ActiveEvent, Integer>("expectedPpl"));
+        headcountCol2.setCellValueFactory(new PropertyValueFactory<ActiveEvent, Integer>("eventId"));
+        headcountCol2.setCellFactory(col -> new TableCell<ActiveEvent, Integer>() {
+            
+            @Override
+            protected void updateItem(Integer eventid, boolean empty) {
+                super.updateItem(eventid, empty);
+                if (empty) {
+                    setText(null);
+                } else {
+                    
+                    List<ActiveEvent> events = rc.getAllEvents();
+                    
+                    ActiveEvent ae = new ActiveEvent();
+                    
+                    for(ActiveEvent c : events) {
+                        
+                        if(c.getEventId().equals(eventid))
+                            ae = c;
+                    }
+                    
+                    setText(ae.getExpectedPpl() + "/" + ae.getMaxPpl());
+                }
+            }
+        });
         
         dateOfEventCol3.setCellValueFactory(new PropertyValueFactory<ActiveEvent, LocalDateTime>("eventBegins"));
         dateOfEventCol3.setCellFactory(col -> new TableCell<ActiveEvent, LocalDateTime>() {
@@ -223,7 +262,30 @@ public class EventListController {
             }
         });
         
-        headcountCol3.setCellValueFactory(new PropertyValueFactory<ActiveEvent, Integer>("expectedPpl"));
+        headcountCol3.setCellValueFactory(new PropertyValueFactory<ActiveEvent, Integer>("eventId"));
+        headcountCol3.setCellFactory(col -> new TableCell<ActiveEvent, Integer>() {
+            
+            @Override
+            protected void updateItem(Integer eventid, boolean empty) {
+                super.updateItem(eventid, empty);
+                if (empty) {
+                    setText(null);
+                } else {
+                    
+                    List<ActiveEvent> events = rc.getAllEvents();
+                    
+                    ActiveEvent ae = new ActiveEvent();
+                    
+                    for(ActiveEvent c : events) {
+                        
+                        if(c.getEventId().equals(eventid))
+                            ae = c;
+                    }
+                    
+                    setText(ae.getExpectedPpl() + "/" + ae.getMaxPpl());
+                }
+            }
+        });
     }
     
     @FXML
@@ -273,6 +335,7 @@ public class EventListController {
             
             error.setTitle("Hiba");
             error.setHeaderText("Nem választottál rendezvényt!");
+            error.setContentText("");
             error.showAndWait();
             
             return;
@@ -282,15 +345,27 @@ public class EventListController {
             
             error.setTitle("Hiba");
             error.setHeaderText("Már jelentkeztél erre a rendezvényre!");
+            error.setContentText("");
             error.showAndWait();
             
             return;
         }
         
-        if(!(event.getExpectedPpl() + 1 < event.getMaxPpl())) {
+        if(!(event.getExpectedPpl() + 1 <= event.getMaxPpl())) {
             
             error.setTitle("Hiba");
             error.setHeaderText("A rendezvény betelt!");
+            error.setContentText("");
+            error.showAndWait();
+            
+            return;
+        }
+        
+        if(event.getOrganizerId() == user.getUserId()) {
+            
+            error.setTitle("Hiba");
+            error.setHeaderText("Ennek az eseménynek te vagy a szervezője, nem kell rá jelentkezned!");
+            error.setContentText("");
             error.showAndWait();
             
             return;
@@ -304,6 +379,8 @@ public class EventListController {
             info.setHeaderText(result);
             info.setContentText("");
             info.showAndWait();
+            
+            allEventsTable.getItems().clear();
             
         } catch(RuntimeException re) {
             
@@ -330,6 +407,7 @@ public class EventListController {
             
             error.setTitle("Hiba");
             error.setHeaderText("Nem választottál rendezvényt!");
+            error.setContentText("");
             error.showAndWait();
             
             return;
@@ -343,6 +421,8 @@ public class EventListController {
             info.setHeaderText(result);
             info.setContentText("");
             info.showAndWait();
+            
+            signedUpTable.getItems().clear();
             
         } catch(RuntimeException re) {
             
@@ -360,6 +440,7 @@ public class EventListController {
         }
     }
     
+    @FXML
     public void cancelEvent() {
         
         ActiveEvent event = organizedTable.getSelectionModel().getSelectedItem();
@@ -368,6 +449,7 @@ public class EventListController {
             
             error.setTitle("Hiba");
             error.setHeaderText("Nem választottál rendezvényt!");
+            error.setContentText("");
             error.showAndWait();
             
             return;
@@ -469,7 +551,7 @@ public class EventListController {
                             + "\nMax létszám: " + event.getMaxPpl());
             info.showAndWait();
             
-            
+            main.EventList(user);
             
         } catch(RuntimeException re) {
             
@@ -489,10 +571,67 @@ public class EventListController {
         }
     }
     
+    @FXML
+    public void closeEvent() {
+        
+        ActiveEvent event = organizedTable.getSelectionModel().getSelectedItem();
+        
+        if(event == null) {
+            
+            error.setTitle("Hiba");
+            error.setHeaderText("Nem választottál rendezvényt!");
+            error.setContentText("");
+            error.showAndWait();
+            
+            return;
+        }
+        
+        if(event.getEventBegins().isAfter(LocalDateTime.now())) {
+            
+            error.setTitle("Hiba");
+            error.setHeaderText("Nem zárhatsz le olyan rendezvényt, ami el sem kezdődött!");
+            error.setContentText("Ha le akarod mondani a rendezvényt, kattints a Lemond gombra!");
+            error.showAndWait();
+            
+            return;
+        }
+        
+        try {
+            
+            String result = rc.closeEvent(event);
+            
+            info.setTitle("Siker");
+            info.setHeaderText(result);
+            info.setContentText("");
+            info.showAndWait();
+            
+            organizedTable.getItems().clear();
+            
+        } catch(RuntimeException re) {
+            
+            error.setTitle("Hiba");
+            error.setHeaderText(re.getMessage());
+            error.setContentText("");
+            error.showAndWait();
+            
+        } catch(Exception e) {
+            
+            error.setTitle("Hiba");
+            error.setHeaderText("Hiba történt a lezárás során!");
+            error.setContentText(e.getMessage());
+            error.showAndWait();
+        }
+    }
 
     public void setMainApp(Main main, User current) {
         this.main = main;
         this.user = current;
+    }
+    
+    @FXML
+    private void backHome() {
+        main.UserMainPage(user);
+
     }
 
 }

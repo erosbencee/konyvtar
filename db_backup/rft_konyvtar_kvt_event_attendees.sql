@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `rft_konyvtar` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `rft_konyvtar`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rft_konyvtar
@@ -37,6 +35,7 @@ CREATE TABLE `kvt_event_attendees` (
 
 LOCK TABLES `kvt_event_attendees` WRITE;
 /*!40000 ALTER TABLE `kvt_event_attendees` DISABLE KEYS */;
+INSERT INTO `kvt_event_attendees` VALUES (5,14,'2017-12-09 18:14:28'),(3,14,'2017-12-09 18:44:18');
 /*!40000 ALTER TABLE `kvt_event_attendees` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-06 10:57:29
+-- Dump completed on 2017-12-09 20:00:55

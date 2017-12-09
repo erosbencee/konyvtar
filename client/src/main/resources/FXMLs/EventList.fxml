@@ -55,10 +55,15 @@
                               <TableColumn fx:id="headcountCol1" prefWidth="250.0" text="Résztvevők száma" />
                            </columns>
                            <placeholder>
-                              <Label text="Kattints a lekérdezés gombra az események megtekintéséhez, amelyekre jelentkeztél!" />
+                              <Label text="Kattins a lekérdezés gombra az rendezvények megtekintéséhez!" />
                            </placeholder>
                         </TableView>
                         <Button fx:id="signUpBtn" layoutX="621.0" layoutY="529.0" maxHeight="38.0" minHeight="38.0" mnemonicParsing="false" onMouseClicked="#signUpToEvent" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Jelentkezés" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="48.0" layoutY="529.0" maxHeight="38.0" minHeight="38.0" mnemonicParsing="false" onMouseClicked="#backHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -83,7 +88,7 @@
                               <TableColumn fx:id="headcountCol2" prefWidth="250.0" text="Résztvevők száma" />
                            </columns>
                            <placeholder>
-                              <Label text="Kattints a lekérdezés gombra az események megtekintéséhez, amelyekre jelentkeztél!" />
+                              <Label text="Kattints a lekérdezés gombra a rendezvények megtekintéséhez, amelyekre jelentkeztél!" />
                            </placeholder>
                         </TableView>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
@@ -93,6 +98,11 @@
                            </font>
                         </Button>
                         <Button fx:id="pullBackBtn" layoutX="621.0" layoutY="529.0" maxHeight="38.0" minHeight="38.0" mnemonicParsing="false" onMouseClicked="#pullBackFromEvent" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Lejelentkezés" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="48.0" layoutY="529.0" maxHeight="38.0" minHeight="38.0" mnemonicParsing="false" onMouseClicked="#backHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -117,7 +127,7 @@
                               <TableColumn fx:id="headcountCol3" prefWidth="250.0" text="Résztvevők száma" />
                            </columns>
                            <placeholder>
-                              <Label text="Kattints a lekérdezés gombra az események megtekintéséhez, amelyekre jelentkeztél!" />
+                              <Label text="Kattints a lekérdezés gombra a rendezvények megtekintéséhez, amelyeket te szervezel!" />
                            </placeholder>
                         </TableView>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
@@ -127,6 +137,16 @@
                            </font>
                         </Button>
                         <Button fx:id="cancelBtn" layoutX="621.0" layoutY="529.0" maxHeight="38.0" minHeight="38.0" mnemonicParsing="false" onMouseClicked="#cancelEvent" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Lemondás" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="48.0" layoutY="529.0" maxHeight="38.0" minHeight="38.0" mnemonicParsing="false" onMouseClicked="#backHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="446.0" layoutY="529.0" maxHeight="38.0" minHeight="38.0" mnemonicParsing="false" onMouseClicked="#closeEvent" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vége" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -212,6 +232,11 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
+                        <Button layoutX="564.0" layoutY="529.0" maxHeight="38.0" minHeight="38.0" mnemonicParsing="false" onMouseClicked="#backHome" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #013440;" text="Vissza" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                </content>

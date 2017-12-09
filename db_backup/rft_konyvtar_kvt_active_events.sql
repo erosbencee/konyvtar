@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `rft_konyvtar` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `rft_konyvtar`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rft_konyvtar
@@ -35,7 +33,7 @@ CREATE TABLE `kvt_active_events` (
   `EXPECTED_PPL` int(3) NOT NULL,
   PRIMARY KEY (`EVENT_ID`),
   UNIQUE KEY `EVENT_ID` (`EVENT_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +42,7 @@ CREATE TABLE `kvt_active_events` (
 
 LOCK TABLES `kvt_active_events` WRITE;
 /*!40000 ALTER TABLE `kvt_active_events` DISABLE KEYS */;
+INSERT INTO `kvt_active_events` VALUES (3,'asdasd2',13,'asdasdadasd','2017-12-22 15:00:00','2017-12-22 16:00:00',1,1),(5,'Próba',14,'sdojdsfoigjh','2017-12-20 08:00:00','2017-12-20 09:00:00',12,1),(6,'Próba2',14,'in a galaxy far far away','2017-12-29 04:00:00','2017-12-29 05:00:00',2,0);
 /*!40000 ALTER TABLE `kvt_active_events` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-06 10:57:30
+-- Dump completed on 2017-12-09 20:00:56

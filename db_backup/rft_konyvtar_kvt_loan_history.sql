@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `rft_konyvtar` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `rft_konyvtar`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rft_konyvtar
@@ -44,6 +42,7 @@ CREATE TABLE `kvt_loan_history` (
 
 LOCK TABLES `kvt_loan_history` WRITE;
 /*!40000 ALTER TABLE `kvt_loan_history` DISABLE KEYS */;
+INSERT INTO `kvt_loan_history` VALUES (1,'9789634058045',2,1,'2017-12-05','2017-12-26','2017-12-09','N');
 /*!40000 ALTER TABLE `kvt_loan_history` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-06 10:57:29
+-- Dump completed on 2017-12-09 20:00:56

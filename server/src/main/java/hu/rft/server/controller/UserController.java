@@ -120,4 +120,12 @@ public class UserController {
         
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
+    
+    @PutMapping("delete")
+    public ResponseEntity<String> deleteUser(@RequestBody User user) {
+        
+        us.delete(user);
+        
+        return new ResponseEntity<>("Sikeres törlés!", HttpStatus.OK);
+    }
 }

@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `rft_konyvtar` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `rft_konyvtar`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rft_konyvtar
@@ -43,7 +41,7 @@ CREATE TABLE `kvt_books` (
 
 LOCK TABLES `kvt_books` WRITE;
 /*!40000 ALTER TABLE `kvt_books` DISABLE KEYS */;
-INSERT INTO `kvt_books` VALUES ('9789630674799','Ízek bűvöletében',NULL,'Gordon Ramsay','T. Bálint Kiadó','gasztronómia',9),('9789631265330','Schon verstehe! - Már értem!','Magyar-német villanyszerelői szakszótár','Szesztai Csaba Károly','Magánkiadás','lexikon, enciklopédia',3),('9789632799452','India - A múltból a jövő felé',NULL,'Gáthy Vera','Typotex Elektronikus Kiadó Kft.','történelem',3),('9789634058045','Az',NULL,'Stephen King','Viking','horror, thriller',12),('9789634058397','A Gyűrűk Ura I-III.',NULL,'J. R. R. Tolkien','Allen & Unwin','fantasy',10),('9789634156123','Tüskevár',NULL,'Fekete István','Móra Ferenc Ifjusági Könyvkiadó Kft.','ifjúsági irodalom, szépirodalom',9),('9789638985750','E-mail-marketing',NULL,'Benyó Dániel','Kreatív Kontroll Kft.','reklám, marketing',2),('9789639301498','Tanuljuk meg a MySQL használatát 24 óra alatt',NULL,'Julie C. Meloni','Kiskapu Kiadó','számítástechnika',6),('9789639863354','Szoftverfejlesztés Java SE platformon',NULL,'Kövesdán Gábor','Szak Kiadó Kft.','számítástechnika, internet',4),('9789639868762','Az Ember a Fellegvárban',NULL,'Philip K. Dick','Agave Könyvek Kiadó Kft.','sci-fi',5);
+INSERT INTO `kvt_books` VALUES ('9789630674799','Ízek bűvöletében',NULL,'Gordon Ramsay','T. Bálint Kiadó','gasztronómia',9),('9789631265330','Schon verstehe! - Már értem!','Magyar-német villanyszerelői szakszótár','Szesztai Csaba Károly','Magánkiadás','lexikon, enciklopédia',3),('9789632799452','India - A múltból a jövő felé',NULL,'Gáthy Vera','Typotex Elektronikus Kiadó Kft.','történelem',3),('9789634058045','Az',NULL,'Stephen King','Viking','horror, thriller',14),('9789634058397','A Gyűrűk Ura I-III.',NULL,'J. R. R. Tolkien','Allen & Unwin','fantasy',9),('9789634156123','Tüskevár',NULL,'Fekete István','Móra Ferenc Ifjusági Könyvkiadó Kft.','ifjúsági irodalom, szépirodalom',9),('9789635454785','Szoftverrendszerek fejlesztése','','Ian Sommerville','Panem Kft.','számítástechnika, programozás',10),('9789638985750','E-mail-marketing',NULL,'Benyó Dániel','Kreatív Kontroll Kft.','reklám, marketing',2),('9789639301498','Tanuljuk meg a MySQL használatát 24 óra alatt',NULL,'Julie C. Meloni','Kiskapu Kiadó','számítástechnika',6),('9789639863354','Szoftverfejlesztés Java SE platformon',NULL,'Kövesdán Gábor','Szak Kiadó Kft.','számítástechnika, internet',4),('9789639868762','Az Ember a Fellegvárban',NULL,'Philip K. Dick','Agave Könyvek Kiadó Kft.','sci-fi',4);
 /*!40000 ALTER TABLE `kvt_books` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-06 10:57:29
+-- Dump completed on 2017-12-09 20:00:55

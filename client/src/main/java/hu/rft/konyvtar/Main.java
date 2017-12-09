@@ -3,11 +3,9 @@ package hu.rft.konyvtar;
 import java.io.IOException;
 
 import hu.rft.adminController.AdminAddNewBookController;
-import hu.rft.adminController.AdminEditEventController;
 import hu.rft.adminController.AdminEditUserController;
 import hu.rft.adminController.AdminHomePageController;
 import hu.rft.adminController.AdminRootLayoutController;
-import hu.rft.adminController.BorrowsOverviewController;
 import hu.rft.controller.EventListController;
 import hu.rft.controller.FAQOverviewController;
 import hu.rft.controller.HomeController;
@@ -15,7 +13,6 @@ import hu.rft.controller.RegistrationController;
 import hu.rft.controller.RootLayoutController;
 import hu.rft.controller.SearchBooksController;
 import hu.rft.controller.HomePageController;
-import hu.rft.controller.LoanOverviewController;
 import hu.rft.controller.PersonalDataController;
 import hu.rft.model.User;
 import javafx.application.Application;
@@ -150,24 +147,6 @@ public class Main extends Application {
 
     }
 
-    public void LoanOverview(User current) {
-        try {
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/FXMLs/LoanOverview.fxml"));
-            AnchorPane Overview = (AnchorPane) loader.load();
-
-            rootLayout2.setCenter(Overview);
-
-            LoanOverviewController controller = loader.getController();
-            controller.setMainApp(this, current);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
     public void SearchBooks(User current) {
         try {
 
@@ -277,24 +256,6 @@ public class Main extends Application {
 
     }
 
-    public void AdminEditEvent(User current) {
-        try {
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/FXMLs/AdminEditEvent.fxml"));
-            AnchorPane Overview = (AnchorPane) loader.load();
-
-            rootLayout2.setCenter(Overview);
-
-            AdminEditEventController controller = loader.getController();
-            controller.setMainApp(this, current);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
     public void AdminEditUser(User current) {
         try {
 
@@ -305,24 +266,6 @@ public class Main extends Application {
             rootLayout2.setCenter(Overview);
 
             AdminEditUserController controller = loader.getController();
-            controller.setMainApp(this, current);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void BorrowsOverview(User current) {
-        try {
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/FXMLs/BorrowsOverview.fxml"));
-            AnchorPane Overview = (AnchorPane) loader.load();
-
-            rootLayout2.setCenter(Overview);
-
-            BorrowsOverviewController controller = loader.getController();
             controller.setMainApp(this, current);
 
         } catch (IOException e) {

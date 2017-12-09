@@ -47,4 +47,19 @@ public class LoanController {
         
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
+    
+    @PutMapping("close")
+    public ResponseEntity<String> closeLoan(@RequestBody ActiveLoan loan) {
+        
+        boolean success = ls.returned(loan);
+        
+        if(success) {
+            
+            return new ResponseEntity<>("A kölcsönzés lezárult!", HttpStatus.OK);
+        
+        } else {
+            
+            return new ResponseEntity<>("Hiba a lezárás során!", HttpStatus.CONFLICT);
+        }
+    }
 }

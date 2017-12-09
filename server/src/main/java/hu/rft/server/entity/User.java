@@ -67,6 +67,16 @@ public class User implements Serializable {
     private LocalDateTime registeredOn;
     @Column(name = "LAST_LOGIN")
     private LocalDateTime lastLogin;
+    @Column(name = "END_DATE")
+    private LocalDate endDate;
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
 
     public User() {
     }

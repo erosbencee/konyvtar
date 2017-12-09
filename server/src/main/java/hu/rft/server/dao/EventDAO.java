@@ -65,7 +65,7 @@ public class EventDAO {
         return false;
     }
     
-    public boolean closeEvent(ActiveEvent event, int attended) {
+    public boolean closeEvent(ActiveEvent event) {
         
         int res = em.createNativeQuery("DELETE FROM KVT_ACTIVE_EVENTS WHERE EVENT_ID = ?1")
                     .setParameter(1, event.getEventId())
@@ -80,7 +80,7 @@ public class EventDAO {
         hist.setEventBegan(event.getEventBegins());
         hist.setEventEnded(LocalDateTime.now());
         hist.setExpectedPpl(event.getExpectedPpl());
-        hist.setAttendedPpl(attended);
+        hist.setAttendedPpl(event.getExpectedPpl());
         
         em.persist(hist);
         

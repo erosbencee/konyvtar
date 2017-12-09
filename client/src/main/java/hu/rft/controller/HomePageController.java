@@ -9,20 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.text.Text;
 
 public class HomePageController {
 
     private Main main;
     private User user;
     private RestClient rc = new RestClient();
-    
-    @FXML
-    private Text msgText;
     
     @FXML
     private TableView<List<String>> kolcsonzesTablazat;
@@ -50,12 +45,6 @@ public class HomePageController {
     
     @FXML
     private TableColumn<List<String>, String> dayOfDeadlineCol;
-    
-    @FXML
-    private Button queryBorrowBtn;
-    
-    @FXML
-    private Button queryEventsBtn;
     
     @FXML
     private void initialize() {

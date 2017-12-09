@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,9 +20,15 @@ public class UserDAO {
     @PersistenceContext
     private EntityManager em;
     
+    @Autowired
+    private LoanDAO ld;
+    
+    @Autowired
+    private EventDAO ed;
+    
     public List<User> getAll() {
         
-        return em.createNativeQuery("SELECT * FROM KVT_USER", User.class).getResultList();
+        return em.createNativeQuery("SELECT * FROM KVT_USER WHERE END_DATE IS NULL", User.class).getResultList();
     }
     
     public String save(User user) {
@@ -74,9 +81,6 @@ public class UserDAO {
         int occurence = ((BigInteger)em.createNativeQuery("SELECT COUNT(*) FROM KVT_ADMINS WHERE USER_ID = ?1")
                           .setParameter(1, id)
                           .getSingleResult()).intValue();
-        
-        System.out.println("id: " + id);
-        System.out.println("occurence: " + occurence);
         
         return occurence > 0;
     }
@@ -136,5 +140,21 @@ public class UserDAO {
     public User update(User user) {
         
         return em.merge(user);
+    }
+    
+    public void delete(User user) {
+        
+        em.createNativeQuery("UPDATE KVT_USER SET END_DATE = SYSDATE() WHER USER_ID = ?1")
+           .setParameter(1, user.getUserId())
+           .executeUpdate();
+        
+        em.createNativeQuery("DELETE FROM KVT_ACTIVE_LOANS WHERE LOANER_ID = ?1")
+           .setParameter(1, user.getUserId())
+           .executeUpdate();
+        
+        em.createNativeQuery("DELETE FROM KVT_ACTIVE_EVENTS WHERE ORGANIZER_ID = ?1")
+           .setParameter(1, user.getUserId())
+           .executeUpdate();
+        
     }
 }

@@ -112,7 +112,6 @@
     -fx-background-color: #EFE7BE;
     -fx-table-cell-border-color: transparent;
     -fx-table-header-border-color: transparent;
-    
 
 }
 
@@ -140,6 +139,10 @@
     -fx-opacity: 1;
 }
 
-.label{
-	 -fx-text-fill: #000000;
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
 }

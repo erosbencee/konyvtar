@@ -75,12 +75,13 @@
                   </Text>
                </children>
             </GridPane>
-            <Hyperlink layoutX="900.0" layoutY="78.0" onMouseClicked="#BackLogin" text="(Kijelentkezés)" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="78.0" />
+            <Hyperlink layoutX="900.0" layoutY="78.0" onMouseClicked="#BackLogin" text="[Kijelentkezés]" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="78.0" />
             <Label layoutX="271.0" layoutY="23.0" prefHeight="46.0" prefWidth="233.0" text="ADMINISZTRÁTOR" textFill="#fc9f00">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
             </Label>
+            <Hyperlink layoutX="723.0" layoutY="78.0" onMouseClicked="#toRegularSurface" text="[Átlépés a normál felületre]" />
          </children>
       </AnchorPane>
    </top>

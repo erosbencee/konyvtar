@@ -52,4 +52,9 @@ public class UserService {
         
         return ud.update(user);
     }
+    
+    public void delete(User user) {
+        
+        ud.delete(user);
+    }
 }

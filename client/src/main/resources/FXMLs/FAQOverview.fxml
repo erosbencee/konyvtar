@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -7,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="640.0" maxWidth="1024.0" minHeight="640.0" minWidth="1024.0" prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: #EFE7BE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.FAQOverviewController">
+<AnchorPane maxHeight="640.0" maxWidth="1024.0" minHeight="640.0" minWidth="1024.0" prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: #EFE7BE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.rft.controller.FAQOverviewController">
    <children>
       <GridPane layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
         <columnConstraints>
@@ -23,8 +26,6 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -65,35 +66,29 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionSix" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="6. Hogyan tudom meghosszabítani a kölcsönzésemet, ha hamarosan lejár?" GridPane.rowIndex="11">
+            <Text fx:id="questionSeven" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="6. Mi történik ha nem juttatom vissza a könyvet a kölcsönzés lejárta után?" GridPane.rowIndex="11">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionSeven" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="7. Mi történik ha nem juttatom vissza a könyvet a kölcsönzés lejárta után?" GridPane.rowIndex="13">
+            <Text fx:id="questionEight" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="7. Hogyan tudok jelentkezni a könyvtár által számon tartott rendezvényekre?" GridPane.rowIndex="13">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionEight" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="8. Hogyan tudok jelentkezni a könyvtár által szervezett rendezvényekre?" GridPane.rowIndex="15">
+            <Text fx:id="questionNine" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="8. Mégsem szeretnék részt venni egy rendezvényen. Mit kell tennem?" GridPane.rowIndex="15">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="questionNine" fill="#002635" strokeType="OUTSIDE" strokeWidth="0.0" text="9. Mégsem szeretnék részt venni egy rendezvényen. Mit kell tennem?" GridPane.rowIndex="17">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Text>
-            <Text fx:id="answerOne" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="2" />
-            <Text fx:id="answerTwo" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="4" />
-            <Text fx:id="answerThree" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="6" />
-            <Text fx:id="answerFour" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="8" />
-            <Text fx:id="answerFive" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="10" />
-            <Text fx:id="answerSix" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="12" />
-            <Text fx:id="answerSeven" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="14" />
-            <Text fx:id="answerEight" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="16" />
-            <Text fx:id="answerNine" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.rowIndex="18" />
+            <Text fx:id="answerOne" strokeType="OUTSIDE" strokeWidth="0.0" text="Bizonyos adatok módosítására az Adataim &gt; Személyes adatok &gt; Adatok módosítása menüpontban van lehetőség. A születési dátum és felhasználónév nem változtatható meg." wrappingWidth="960.986328125" GridPane.rowIndex="2" />
+            <Text fx:id="answerTwo" strokeType="OUTSIDE" strokeWidth="0.0" text="Erre szintén az 1-es kérdés válaszában szereplő menüpontban van lehetőség." wrappingWidth="952.13671875" GridPane.rowIndex="4" />
+            <Text fx:id="answerThree" strokeType="OUTSIDE" strokeWidth="0.0" text="A Kölcsönzések &gt; Új kölcsönzés menüpont kiválasztása után van lehetőség keresni az elérhető könyvek között és kölcsönzést kezdeményezni." wrappingWidth="961.13671875" GridPane.rowIndex="6" />
+            <Text fx:id="answerFour" strokeType="OUTSIDE" strokeWidth="0.0" text="A kölcsönzések alapértelmezett időtartama 6 hét." wrappingWidth="954.13671875" GridPane.rowIndex="8" />
+            <Text fx:id="answerSix" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelenleg erre nincs lehetőség. Amennyiben nem elég a 6 hét, a könyv határidőn belüli visszahozása esetén lehetőség van újraindítani a kölcsönzést." wrappingWidth="951.13671875" GridPane.rowIndex="10" />
+            <Text fx:id="answerSeven" strokeType="OUTSIDE" strokeWidth="0.0" text="A 6 hetes időintervallum letelte után 2 hét türelmi időt adunk. Ennek túllépése a könyvtárból való kitiltást vonja maga után, adott esetben a könyv visszaszerzését jogi útra terelhetjük." wrappingWidth="969.13671875" GridPane.rowIndex="12" />
+            <Text fx:id="answerEight" strokeType="OUTSIDE" strokeWidth="0.0" text="A rendezvények megtekintésére, kezelésére illetve kiírására a Rendezvények &gt; Rendezvények megtekintése menüpont alatt van lehetőség." wrappingWidth="959.89453125" GridPane.rowIndex="14" />
+            <Text fx:id="answerNine" strokeType="OUTSIDE" strokeWidth="0.0" text="A Rendezvények &gt; Rendezvények megtekintése &gt; Részt veszel rajta menüpont alatt van lehetőség lejelentkezni a kiválasztott rendezvény(ek)ről." wrappingWidth="958.474609375" GridPane.rowIndex="16" />
          </children>
       </GridPane>
    </children>
